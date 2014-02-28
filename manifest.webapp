@@ -1,0 +1,32 @@
+{
+    "name": "My App Name",
+    "description": "description of the app",
+    "version": "1",
+    "type": "web",
+    "csp": "allow 'self'; script-src 'self' ; style-src 'self';",
+    "launch_path": "/index.html",
+    "appcache_path": "/manifest.appcache",
+    "fullscreen": "false",
+    "icons": {
+        "16": "/img/icons/webapp/icon16.png",
+        "30": "/img/icons/webapp/icon30.png",
+        "32": "/img/icons/webapp/icon32.png",
+        "48": "/img/icons/webapp/icon48.png",
+        "60": "/img/icons/webapp/icon60.png",
+        "64": "/img/icons/webapp/icon64.png",
+        "90": "/img/icons/webapp/icon90.png",
+        "128": "/img/icons/webapp/icon128.png",
+        "256": "/img/icons/webapp/icon256.png",
+        "512": "/img/icons/webapp/icon512.png"
+    },
+    "developer": {
+        "name": "Daniele Veneroni",
+        "url": "http://venerons.github.io/"
+    },
+    "default_locale": "en",
+    "locales": {
+      "it": {
+        "description": "Descrizione dell'applicazione"
+      }
+    }
+}
