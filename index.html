@@ -1,67 +1,94 @@
-<!DOCTYPE html> 
-<html> 
-	<head> 
-	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<title>PhoneGap MegaDemo</title> 
-	<link href="css/jquery.mobile-1.0rc1.min.css" rel="stylesheet" type="text/css" />
-	<script src="js/jquery-1.6.4.min.js"></script>
-	<script src="js/config.js"></script>
-	<script src="js/jquery.mobile-1.0rc1.min.js"></script>
-	<script type="text/javascript" charset="utf-8" src="js/phonegap.js"></script>
-	<script type="text/javascript" src="js/demo.js"></script>
-</head> 
-<body> 
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <title>StatusBar Example</title>
+        
+        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+        <script type="text/javascript" charset="utf-8" src="statusbar.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            
+            var g_overlay = false;
+            var g_color = "white";
+            
+            // Wait for Cordova to load
+            //
+            document.addEventListener("deviceready", onDeviceReady, false);
+            
+            // Cordova is ready
+            //
+            function onDeviceReady() {
+            	// add any initialization code here
+            }
+        
+        	function showStatusBar(show) {
+            	if (show) {
+            		StatusBar.show();
+                	StatusBar.overlaysWebView(g_overlay)
+            	}
+            	else
+                	StatusBar.hide();
+        	}
+        
+        	function overlayWebView(isOverlay) {
+            	g_overlay = isOverlay;
+            	StatusBar.overlaysWebView(g_overlay);
+        	}
+        
+        	function setColor(inColor) {
+            	g_color = inColor
+            	StatusBar.backgroundColorByName(g_color);
+        
+            	if (g_color === "black")
+                	StatusBar.styleLightContent();
+        	}
 
-<div data-role="page">
+        	function defaultStyle() {
+            	g_color = "white"
+            	StatusBar.styleDefault();
+            	StatusBar.backgroundColorByName(g_color);
+        	}
+        
+        	function lightContent() {
+            	StatusBar.styleLightContent();
+            	if (g_color === "white") {
+                	g_color = "black";
+                	StatusBar.backgroundColorByName(g_color);
+            	}
+        	}
 
-	<div data-role="header">
-		<h1>PhoneGap MegaDemo</h1>
-	</div>
-
-	<div data-role="content">	
-		<ul data-role="listview" data-inset="true">    
-	    	<li data-role="list-divider">Demos</li>
-			<li><a href="accelerometer/index.html">Accelerometer</a></li>    
-			<li><a href="camera/index.html">Camera</a></li>    
-			<li><a href="capture/index.html">Capture</a></li>    
-			<li><a href="compass/index.html">Compass</a></li>    
-			<li><a href="contacts/index.html">Contacts</a></li>    
-			<li><a href="connection/index.html">Connection</a></li>    
-			<li><a href="device/index.html">Device</a></li>    
-			<li><a href="event/index.html">Event</a></li>
-			<!--<li><a href="file/index.html">File</a></li>-->
-			<li><a href="geolocation/index.html">Geolocation</a></li>    
-			<li><a href="media/index.html">Media</a></li>    
-	    	<li><a href="notification/index.html">Notification</a></li>    
-			<li><a href="storage/index.html">Storage</a></li>
-	    </ul>    
-
-		<ul data-role="listview" data-inset="true">    
-	    	<li data-role="list-divider">Misc</li>
-			<li><a href="remote/index.html">Remote Data</a></li>
-			<li><a href="#credit">Credit</a></li>
-	    </ul>    
-
-	</div>
-
-	<div data-role="footer">
-		<h4>Created by Raymond Camden</h4>
-	</div>
-
-</div>
-
-<div data-role="page" id="credit">
-	
-		<div data-role="content">
-			<p>
-			This demo created by <a href="http://www.coldfusionjedi.com">Raymond Camden</a>
-			</p>
-			<p>
-			Most of the code for this demo came straight from the PhoneGap API docs. 
-			</p>
-			<p>
-			You can get the latest version of this code at Github: <a href="https://github.com/cfjedimaster/PhoneGapMega">https://github.com/cfjedimaster/PhoneGapMega</a>
-			</p>
-		</div>
-</body>
+        </script>
+    </head>
+    <body>
+    	<p><a href="#" onclick="showStatusBar(false); return false;">Hide Status Bar</a></p>
+    	<p><a href="#" onclick="showStatusBar(true); return false;">Show Status Bar</a></p>
+    
+    	<p><a href="#" onclick="setColor('red'); return false;">Red Status Bar</a></p>
+    	<p><a href="#" onclick="setColor('blue'); return false;">Blue Status Bar</a></p>
+    	<p><a href="#" onclick="setColor('black'); return false;">Black Status Bar</a></p>
+    
+        <p><a href="#" onclick="overlayWebView(true); return false;">Status Bar Overlays WebView</a></p>
+        <p><a href="#" onclick="overlayWebView(false); return false;">Status Bar sits above WebView</a></p>
+    
+        <p><a href="#" onclick="lightContent(); return false;">Light Content Status Bar</a></p>
+        <p><a href="#" onclick="defaultStyle(); return false;">Default Status Bar Style</a></p>
+        
+    </body>
 </html>
