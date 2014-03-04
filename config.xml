@@ -16,7 +16,9 @@
     
 	<preference name="phonegap-version" value="3.1.0" />
 
-	<plugin name="Accelerometer" value="org.apache.cordova.AccelListener" />
+	<feature name="Accelerometer">
+		<param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
+	</feature>
 
 	<gap:platforms>
 		<gap:platform name="android" />
