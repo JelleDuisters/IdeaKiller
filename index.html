@@ -33,7 +33,6 @@
                 <script type="text/javascript" src="js/jQuery-2.2.0.min.js"></script>
 				<script type="text/javascript" src="js/index.js"></script>
                	<script type="text/javascript" charset="utf-8">
-					var start = false;							
 					// The watch id references the current `watchAcceleration`
 					var watchID = null;
 				
@@ -74,7 +73,14 @@
 											'Acceleration Y: ' + acceleration.y         + '<br />' +
 											'Acceleration Z: ' + acceleration.z         + '<br />' +
 											'Timestamp: '      + acceleration.timestamp + '<br />';
-						start = true;
+											
+											
+						
+						if(acceleration.y > 7){
+							$('body').css('background', 'red !important');
+						}else {
+							$('body').css('background', 'white !important');
+						}
 					}
 				
 					// onError: Failed to get the acceleration
@@ -84,17 +90,6 @@
 					}
 
 		
-					while (start == true);
-					{
-						$('body').css('background', 'white !important');
-						
-						if(acceleration.y > 7){
-							$('body').css('background', 'red !important');
-						}else {
-							$('body').css('background', 'white !important');
-						}
-					}
-					alert (start.toString());
 			
 				</script>
                 <br>
