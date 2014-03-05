@@ -86,12 +86,15 @@
 		
 					while (start == true);
 					{
+						$('body').css('background', 'white !important');
+						
 						if(acceleration.y > 7){
 							$('body').css('background', 'red !important');
 						}else {
-							$('body').css('background', 'none !important');
+							$('body').css('background', 'white !important');
 						}
 					}
+					alert (start.toString());
 			
 				</script>
                 <br>
