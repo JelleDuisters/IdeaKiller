@@ -51,7 +51,7 @@
 					function startWatch() {
 				
 						// Update acceleration every 3 seconds
-						var options = { frequency: 300 };
+						var options = { frequency: 3 };
 				
 						watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 					}
@@ -76,7 +76,7 @@
 											
 											
 						
-						if(acceleration.y > 7){
+						if(acceleration.y > 7 || acceleration.y < -7){
 							$('body').css('background', 'red !important');
 						}else {
 							$('body').css('background', '#A6D785 !important');
@@ -88,8 +88,6 @@
 					function onError() {
 						alert('onError!');
 					}
-
-		
 			
 				</script>
                 <br>
