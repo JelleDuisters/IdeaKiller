@@ -27,7 +27,6 @@
     </head>
     <body>
         <div class="page">
-            <h1>Sensor Data</h1>
             <div id="deviceready">
                 <script type="text/javascript" src="phonegap.js"></script>
                 <script type="text/javascript" src="js/jQuery-2.2.0.min.js"></script>
@@ -69,17 +68,20 @@
 					//
 					function onSuccess(acceleration) {
 						var element = document.getElementById('accelerometer');
-						element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
+						/*element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
 											'Acceleration Y: ' + acceleration.y         + '<br />' +
 											'Acceleration Z: ' + acceleration.z         + '<br />' +
 											'Timestamp: '      + acceleration.timestamp + '<br />';
 											
 											
+						*/
 						
 						if(acceleration.y > 7 || acceleration.y < -7){
 							$('body').css('background', 'red !important');
+							$('#accelerometer').html("<h1>Idea Killer!</h1>");
 						}else {
-							$('body').css('background', '#A6D785 !important');
+							$('body').css('background', 'green !important');
+							$('#accelerometer').html(" ");
 						}
 					}
 				

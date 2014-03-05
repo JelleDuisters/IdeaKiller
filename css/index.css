@@ -70,12 +70,13 @@ body {
 }
 
 h1 {
-    font-size:84px;
-    font-weight:normal;
+    font-size: 200px;
+    font-weight: bold;
     margin:0px;
     overflow:visible;
     padding:0px;
     text-align:center;
+	color: white;
 }
 
 .event {
