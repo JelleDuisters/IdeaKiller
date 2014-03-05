@@ -29,39 +29,62 @@
         <div class="app">
             <h1>PhoneGap</h1>
             <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+                <script type="text/javascript" src="phonegap.js"></script>
+				<script type="text/javascript" src="js/index.js"></script>
+               	<script type="text/javascript" charset="utf-8">
+
+					// The watch id references the current `watchAcceleration`
+					var watchID = null;
+				
+					// Wait for device API libraries to load
+					//
+					document.addEventListener("deviceready", onDeviceReady, false);
+				
+					// device APIs are available
+					//
+					function onDeviceReady() {
+						startWatch();
+					}
+				
+					// Start watching the acceleration
+					//
+					function startWatch() {
+				
+						// Update acceleration every 3 seconds
+						var options = { frequency: 3000 };
+				
+						watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+					}
+				
+					// Stop watching the acceleration
+					//
+					function stopWatch() {
+						if (watchID) {
+							navigator.accelerometer.clearWatch(watchID);
+							watchID = null;
+						}
+					}
+				
+					// onSuccess: Get a snapshot of the current acceleration
+					//
+					function onSuccess(acceleration) {
+						var element = document.getElementById('accelerometer');
+						element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
+											'Acceleration Y: ' + acceleration.y         + '<br />' +
+											'Acceleration Z: ' + acceleration.z         + '<br />' +
+											'Timestamp: '      + acceleration.timestamp + '<br />';
+					}
+				
+					// onError: Failed to get the acceleration
+					//
+					function onError() {
+						alert('onError!');
+					}
+			
+				</script>
+                <div id="accelerometer">Waiting for accelerometer...</div>
             </div>
         </div>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-			// Wait for device API libraries to load
-			//
-			document.addEventListener("deviceready", onDeviceReady, false);
-		
-			// device APIs are available
-			//
-			function onDeviceReady() {
-				navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-			}
-		
-			// onSuccess: Get a snapshot of the current acceleration
-			//
-			function onSuccess(acceleration) {
-				alert('Acceleration X: ' + acceleration.x + '\n' +
-					  'Acceleration Y: ' + acceleration.y + '\n' +
-					  'Acceleration Z: ' + acceleration.z + '\n' +
-					  'Timestamp: '      + acceleration.timestamp + '\n');
-			}
-		
-			// onError: Failed to get the acceleration
-			//
-			function onError() {
-				alert('onError!');
-			}
-        </script>
-        <p>getCurrentAcceleration</p>
+        
     </body>
 </html>
