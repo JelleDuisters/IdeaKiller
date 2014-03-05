@@ -28,7 +28,7 @@
     <body>
         <div class="page">
             <h1>Sensor Data</h1>
-            <div id="deviceready" class="blink">
+            <div id="deviceready">
                 <script type="text/javascript" src="phonegap.js"></script>
 				<script type="text/javascript" src="js/index.js"></script>
                	<script type="text/javascript" charset="utf-8">
@@ -51,7 +51,7 @@
 					function startWatch() {
 				
 						// Update acceleration every 3 seconds
-						var options = { frequency: 3000 };
+						var options = { frequency: 300 };
 				
 						watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 					}
