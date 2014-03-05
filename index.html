@@ -68,15 +68,15 @@
 					//
 					function onSuccess(acceleration) {
 						var element = document.getElementById('accelerometer');
-						/*element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
+						element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
 											'Acceleration Y: ' + acceleration.y         + '<br />' +
 											'Acceleration Z: ' + acceleration.z         + '<br />' +
 											'Timestamp: '      + acceleration.timestamp + '<br />';
 											
 											
-						*/
 						
-						if(acceleration.y > 7 || acceleration.x > 7 ||acceleration.x > -7){
+						
+						if(acceleration.y > 7 || acceleration.x > 7 ||acceleration.x < -7){
 							$('body').css('background', 'red !important');
 							$('#accelerometer').html("<h1>Idea Killer!</h1>");
 						}else {
