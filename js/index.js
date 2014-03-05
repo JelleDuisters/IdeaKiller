@@ -16,6 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var start = false;
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -32,6 +34,7 @@ var app = {
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
+	
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 		
@@ -116,6 +119,7 @@ function listenToSensor() {
 							'Acceleration Y: ' + acceleration.y         + '<br />' +
 							'Acceleration Z: ' + acceleration.z         + '<br />' +
 							'Timestamp: '      + acceleration.timestamp + '<br />';
+		start = true;
 	}
 
 	// onError: Failed to get the acceleration
