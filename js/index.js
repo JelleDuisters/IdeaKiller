@@ -34,6 +34,32 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+		
+		listenToSensor();
+		
+		while (start == true)
+		{
+			if(acceleration.y > 7){
+				$('body').css('background', 'red !important');
+			}else {
+				$('body').css('background', 'none !important');
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -47,3 +73,54 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+function listenToSensor() {
+		
+	// The watch id references the current `watchAcceleration`
+	var watchID = null;
+
+	// Wait for device API libraries to load
+	//
+	document.addEventListener("deviceready", onDeviceReady, false);
+
+	// device APIs are available
+	//
+	function onDeviceReady() {
+		startWatch();
+	}
+
+	// Start watching the acceleration
+	//
+	function startWatch() {
+
+		// Update acceleration every 3 seconds
+		var options = { frequency: 300 };
+
+		watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+	}
+
+	// Stop watching the acceleration
+	//
+	function stopWatch() {
+		if (watchID) {
+			navigator.accelerometer.clearWatch(watchID);
+			watchID = null;
+		}
+	}
+
+	// onSuccess: Get a snapshot of the current acceleration
+	//
+	function onSuccess(acceleration) {
+		var element = document.getElementById('accelerometer');
+		element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
+							'Acceleration Y: ' + acceleration.y         + '<br />' +
+							'Acceleration Z: ' + acceleration.z         + '<br />' +
+							'Timestamp: '      + acceleration.timestamp + '<br />';
+	}
+
+	// onError: Failed to get the acceleration
+	//
+	function onError() {
+		alert('onError!');
+	}
+}
