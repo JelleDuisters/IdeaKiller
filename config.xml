@@ -62,6 +62,9 @@
 	<feature name="Accelerometer">
 		<param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
 	</feature>
+	<feature name="Media">
+		<param name="android-package" value="org.apache.cordova.media.AudioHandler" />
+	</feature>
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
