@@ -33,7 +33,6 @@
 				<script type="text/javascript" src="js/index.js"></script>
                 <br>
                 <br>
-                <!--<audio id="audiotag" src="audio/gun-gunshot-01.mp3" preload="auto"></audio>-->
                 <div id="accelerometer">Waiting for accelerometer...</div>
             </div>
         </div>
@@ -118,15 +117,18 @@
 								
 			
 			
-			if(acceleration.y > 7 && i == 1){
+			if(acceleration.y > 7){
 				i = 2;
-				$('body').css('background', 'red !important');
-				$('#accelerometer').html("<h1>Idea Killer!</h1>");
-				playAudio("http://www.soundjay.com/mechanical/machine-gun-02.mp3");
+				if (i == 1){
+					$('body').css('background', 'red !important');
+					$('#accelerometer').html("<h1>Idea Killer!</h1>");
+					playAudio("http://www.soundjay.com/mechanical/gun-gunshot-01.mp3");
+				}
 			}else {
 				i = 1;
 				$('body').css('background', 'green !important');
 				$('#accelerometer').html(" ");
+				stopAudio();
 			}
 			
 		}
