@@ -40,8 +40,9 @@
         
     </body>
     <script type="text/javascript" charset="utf-8">
+		var kaart = false;
+	
 		// Audio player
-        //
         var my_media = null;
         var mediaTimer = null;
 
@@ -56,7 +57,13 @@
             my_media.play();
 
         }
-
+		function stopAudio() {
+            if (my_media) {
+                my_media.stop();
+            }
+            clearInterval(mediaTimer);
+            mediaTimer = null;
+        }
 
         // onSuccess Callback
         //
@@ -116,15 +123,23 @@
 			
 			
 			if(acceleration.y > 7){
+				kaart = true;
+			}else {
+				kaart = false;
+			}
+			
+			if (kaart == true){
 				$('body').css('background', 'red !important');
 				$('#accelerometer').html("<h1>Idea Killer!</h1>");
-				playAudio("http://www.soundjay.com/mechanical/gun-gunshot-01.mp3");
-				//document.getElementById('audiotag').play();
+				playAudio("http://www.soundjay.com/mechanical/machine-gun-02.mp3");
 			}else {
 				$('body').css('background', 'green !important');
 				$('#accelerometer').html(" ");
+				stopAudio();
 			}
 		}
+		
+		
 		// onError: Failed to get the acceleration
 		//
 		function onError() {
