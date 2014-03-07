@@ -119,7 +119,6 @@
 			
 			if(acceleration.y > 7){
 				if (i == 1){
-					
 					$('body').css('background', 'red !important');
 					$('#accelerometer').html("<h1>Idea Killer!</h1>");
 					playAudio("http://www.soundjay.com/mechanical/gun-gunshot-01.mp3");
@@ -129,7 +128,7 @@
 				i = 1;
 				$('body').css('background', 'green !important');
 				$('#accelerometer').html(" ");
-				stopAudio();
+				//stopAudio();
 			}
 			
 		}
