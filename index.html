@@ -88,7 +88,7 @@
 			if(acceleration.y < -7 || acceleration.y > 7 || acceleration.x > 7 ||acceleration.x < -7){
 				$('body').css('background', 'red !important');
 				$('#accelerometer').html("<h1>Idea Killer!</h1>");
-				playAudio("audio/gun-gunshot-01.mp3");
+				playAudio("http://www.soundjay.com/mechanical/gun-gunshot-02.mp3");
 				//document.getElementById('audiotag').play();
 			}else {
 				$('body').css('background', 'green !important');
@@ -106,11 +106,7 @@
 		
 		
 		//______________________________________________________________________________________________________________________audio test:
-		function onDeviceReady() {
-            playAudio("http://www.soundjay.com/mechanical/gun-gunshot-02.mp3");
-        }
-
-        // Audio player
+		// Audio player
         //
         var my_media = null;
         var mediaTimer = null;
