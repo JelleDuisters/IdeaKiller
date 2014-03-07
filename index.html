@@ -115,10 +115,10 @@
 								
 			
 			
-			if(acceleration.y < -7 || acceleration.y > 7 || acceleration.x > 7 ||acceleration.x < -7){
+			if(acceleration.y > 7){
 				$('body').css('background', 'red !important');
 				$('#accelerometer').html("<h1>Idea Killer!</h1>");
-				playAudio("http://www.soundjay.com/mechanical/gun-gunshot-02.mp3");
+				playAudio("http://www.soundjay.com/mechanical/gun-gunshot-01.mp3");
 				//document.getElementById('audiotag').play();
 			}else {
 				$('body').css('background', 'green !important');
