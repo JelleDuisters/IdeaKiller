@@ -41,10 +41,9 @@
     </body>
     <script type="text/javascript" charset="utf-8">
 		var kaart = false;
-	
+		var i = 1;
 		// Audio player
         var my_media = null;
-        var mediaTimer = null;
 
         // Play audio
         //
@@ -61,8 +60,6 @@
             if (my_media) {
                 my_media.stop();
             }
-            clearInterval(mediaTimer);
-            mediaTimer = null;
         }
 
         // onSuccess Callback
@@ -122,10 +119,12 @@
 								
 			
 			
-			if(acceleration.y > 7){
+			if(acceleration.y > 7 && i == 1){
+				i = 2;
 				kaart = true;
 			}else {
 				kaart = false;
+				i = 1;
 			}
 			
 			if (kaart == true){
