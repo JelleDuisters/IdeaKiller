@@ -79,39 +79,13 @@
 						if(acceleration.y < -7 || acceleration.y > 7 || acceleration.x > 7 ||acceleration.x < -7){
 							$('body').css('background', 'red !important');
 							$('#accelerometer').html("<h1>Idea Killer!</h1>");
-							playAudio("audio/gun-gunshot-01.mp3");
+							document.getElementById('audiotag').play();
 						}else {
 							$('body').css('background', 'green !important');
 							$('#accelerometer').html(" ");
 						}
 					}
-					function playAudio(src) {
-						// Create Media object from src
-						my_media = new Media(src, onSuccess, onError);
-			
-						// Play audio
-						my_media.play();
-			
-						// Update my_media position every second
-						if (mediaTimer == null) {
-							mediaTimer = setInterval(function() {
-								// get my_media position
-								my_media.getCurrentPosition(
-									// success callback
-									function(position) {
-										if (position > -1) {
-											setAudioPosition((position) + " sec");
-										}
-									},
-									// error callback
-									function(e) {
-										console.log("Error getting pos=" + e);
-										setAudioPosition("Error: " + e);
-									}
-								);
-							}, 1000);
-						}
-					}
+					
 					// onError: Failed to get the acceleration
 					//
 					function onError() {
@@ -121,6 +95,7 @@
 				</script>
                 <br>
                 <br>
+                <audio id="audiotag" src="audio/gun-gunshot-01.mp3" preload="auto"></audio>
                 <div id="accelerometer">Waiting for accelerometer...</div>
             </div>
         </div>
