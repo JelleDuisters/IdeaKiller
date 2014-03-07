@@ -92,10 +92,13 @@ h2 {
 input {
 	position: absolute;
 	top: 30%;
-	font-size: 100px;
-	height: 130px;
 	width: 100%;
-	line-height: 150px;
+	border: 5px solid white; 
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+	height: 10%;
+	font-size: 200%;
 }
 
 .event {
