@@ -118,18 +118,18 @@
 			
 			
 			if(acceleration.y > 7){
-				count ++;
-				$('body').css('background', 'red !important');
-				$('#accelerometer').html("<h1>Idea Killer!</h1><p>"+count+"</p>");
 				if (i == 1){
 					//playAudio("http://www.soundjay.com/mechanical/gun-gunshot-01.mp3");
 					playAudio("/android_asset/www/audio/gun.mp3");
+					count ++;
+					$('body').css('background', 'red !important');
+					$('#accelerometer').html("<h1>Idea Killer!</h1><h2>"+count.toString()+"</h2>");
 				}
 				i = 2;
 			}else {
 				i = 1;
 				$('body').css('background', 'green !important');
-				$('#accelerometer').html(" ");
+				$('#accelerometer').html("<h2>"+count+"</h2>");
 				//stopAudio();
 			}
 			
