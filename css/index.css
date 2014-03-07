@@ -79,6 +79,16 @@ h1 {
 	color: white;
 	text-transform:uppercase;
 }
+h2 {
+    font-size: 100px;
+    font-weight: bold;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+	color: white;
+	text-transform:uppercase;
+}
 
 .event {
     border-radius:4px;
