@@ -41,7 +41,6 @@
     </body>
     <script type="text/javascript" charset="utf-8">
 		var kaart = false;
-		var i = 1;
 		// Audio player
         var my_media = null;
 
@@ -121,21 +120,15 @@
 			
 			if(acceleration.y > 7 && i == 1){
 				i = 2;
-				kaart = true;
-			}else {
-				kaart = false;
-				i = 1;
-			}
-			
-			if (kaart == true){
 				$('body').css('background', 'red !important');
 				$('#accelerometer').html("<h1>Idea Killer!</h1>");
 				playAudio("http://www.soundjay.com/mechanical/machine-gun-02.mp3");
 			}else {
+				i = 1;
 				$('body').css('background', 'green !important');
 				$('#accelerometer').html(" ");
-				stopAudio();
 			}
+			
 		}
 		
 		
