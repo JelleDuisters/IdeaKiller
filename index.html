@@ -55,7 +55,6 @@
 		function startSession(){
 			$('#startpage').hide();
 			$('#session').show();
-			$('#session').attr('style', 'background-color: red !important');
 			
 			var count = 0;
 			// Audio player
@@ -153,7 +152,7 @@
 					i = 2;
 				}else {
 					i = 1;
-					$('#session').attr('style', 'background-color: green !important');
+					//$('#session').attr('style', 'background-color: green !important');
 					$('#accelerometer').html("<h2>"+count+"</h2>");
 					//stopAudio();
 					$('#tekst').show();
