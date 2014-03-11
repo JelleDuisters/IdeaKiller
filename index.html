@@ -123,14 +123,14 @@
 					//playAudio("http://www.soundjay.com/mechanical/gun-gunshot-01.mp3");
 					playAudio("/android_asset/www/audio/gun.mp3");
 					count ++;
-					$('.page').css('background', 'red !important');
+					$('.page').css('background', 'red!important');
 					$('#tekst').hide();
 					$('#accelerometer').html("<h1>"+$('#tekst').val()+"</h1><h2>"+count.toString()+"</h2>");
 				}
 				i = 2;
 			}else {
 				i = 1;
-				$('.page').css('background', 'green !important');
+				$('.page').css('background', 'green!important');
 				$('#accelerometer').html("<h2>"+count+"</h2>");
 				//stopAudio();
 				$('#tekst').show();
