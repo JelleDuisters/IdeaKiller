@@ -73,7 +73,7 @@ h1 {
     font-size: 200px;
     font-weight: bold;
     margin:0px;
-    overflow:visible;
+    overflow:auto;
     padding:0px;
     text-align:center;
 	color: white;
