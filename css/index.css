@@ -93,11 +93,9 @@ input {
 	position: absolute;
 	top: 30%;
 	width: 100%;
-	border: 5px solid white; 
     padding: 15px;
     background: rgba(255,255,255,0.5);
     margin: 0 0 10px 0;
-	height: 10%;
 	font-size: 200%;
 }
 
