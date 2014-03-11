@@ -94,14 +94,14 @@ input {
 	top: 30%;
 	width: 100%;
 	border: none;
-	color: black; 
+	color: white!important; 
     padding: 15px;
     background: rgba(255,255,255,0.5);
     margin: 0 0 10px 0;
 	font-size: 150%;
 }
 input:focus {
-	color: #F00;
+	color: black;
 }
 
 .event {

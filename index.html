@@ -124,6 +124,7 @@
 					playAudio("/android_asset/www/audio/gun.mp3");
 					count ++;
 					$('body').css('background', 'red !important');
+					$('#tekst').hide();
 					$('#accelerometer').html("<h1>"+$('#tekst').val()+"</h1><h2>"+count.toString()+"</h2>");
 				}
 				i = 2;
@@ -132,6 +133,7 @@
 				$('body').css('background', 'green !important');
 				$('#accelerometer').html("<h2>"+count+"</h2>");
 				//stopAudio();
+				$('#tekst').show();
 			}
 			
 		}
