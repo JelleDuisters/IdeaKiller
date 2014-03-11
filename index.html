@@ -139,7 +139,7 @@
 						//playAudio("http://www.soundjay.com/mechanical/gun-gunshot-01.mp3");
 						playAudio("/android_asset/www/audio/gun.mp3");
 						count ++;
-						$('#session').attr('style', 'background-color: red !important');
+						$('#session').css('background','red');
 						$('#tekst').hide();
 						
 						
@@ -152,7 +152,7 @@
 					i = 2;
 				}else {
 					i = 1;
-					//$('#session').attr('style', 'background-color: green !important');
+					$('#session').css('background','green');
 					$('#accelerometer').html("<h2>"+count+"</h2>");
 					//stopAudio();
 					$('#tekst').show();
