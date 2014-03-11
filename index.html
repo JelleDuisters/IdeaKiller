@@ -47,11 +47,20 @@
                 
                 
                 <div id="accelerometer">Waiting for accelerometer...</div>
-                
+                <input type="button" id="stop" value="Stop" onClick="gotoHome()"/>
             </div>
         </div>
     </body>
     <script type="text/javascript" charset="utf-8">
+		function gotoHome(){
+			$('#startpage').show();
+			$('#session').hide();
+			stopSession();
+		};
+		function stopSession(){
+			stopWatch();
+			stopAudio();
+		};
 		function startSession(){
 			$('#startpage').hide();
 			$('#session').show();
