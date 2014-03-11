@@ -89,7 +89,7 @@ h2 {
 	color: white;
 	text-transform:uppercase;
 }
-input {
+#tekst {
 	position: absolute;
 	top: 30%;
 	width: 100%;
@@ -100,7 +100,7 @@ input {
     margin: 0 0 10px 0;
 	font-size: 150%;
 }
-input:focus {
+#tekst:focus {
 	color: black;
 }
 
