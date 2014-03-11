@@ -26,18 +26,29 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div class="page">
+    	<div class="page" id="startpage">
             <div id="deviceready">
                 <script type="text/javascript" src="phonegap.js"></script>
                 <script type="text/javascript" src="js/jQuery-2.2.0.min.js"></script>
-				<script type="text/javascript" src="js/index.js"></script>
-                <br>
-                <br>
-                <div id="accelerometer">Waiting for accelerometer...</div>
-                <input type='text' id='tekst' placeholder='IdeaKiller'/>
+                <script type="text/javascript" src="js/index.js"></script>
+                
+                <form>
+                    <label>Voer een tekst in die op de kaart komt te staan:</label>
+                    <br>
+                    <input type='text' id='tekst' placeholder='Idea Killer'/>
+                    <br>
+                    <input type="button" id="go" value="Go"/>
+                </form>
             </div>
         </div>
-        
+        <div class="page">
+            <div id="game">
+                
+                
+                <div id="accelerometer">Waiting for accelerometer...</div>
+                
+            </div>
+        </div>
     </body>
     <script type="text/javascript" charset="utf-8">
 		var count = 0;
@@ -123,12 +134,12 @@
 					//playAudio("http://www.soundjay.com/mechanical/gun-gunshot-01.mp3");
 					playAudio("/android_asset/www/audio/gun.mp3");
 					count ++;
-					$('#deviceready').attr('style', 'background-color: red !important');
+					$('#game').attr('style', 'background-color: red !important');
 					$('#tekst').hide();
 					
 					
 					if ($('#tekst').val() == ""){
-						$('#accelerometer').html("<h1>Idea Killer!</h1><h2>"+count.toString()+"</h2>");
+						$('#accelerometer').html("<h1>Idea Killer</h1><h2>"+count.toString()+"</h2>");
 					}else {
 						$('#accelerometer').html("<h1>"+$('#tekst').val()+"</h1><h2>"+count.toString()+"</h2>");
 					}
@@ -136,7 +147,7 @@
 				i = 2;
 			}else {
 				i = 1;
-				$('#deviceready').attr('style', 'background-color: green !important');
+				$('#game').attr('style', 'background-color: green !important');
 				$('#accelerometer').html("<h2>"+count+"</h2>");
 				//stopAudio();
 				$('#tekst').show();
