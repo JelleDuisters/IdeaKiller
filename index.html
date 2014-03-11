@@ -43,17 +43,11 @@
             </div>
         </div>
         <div class="page" id="session">
-            <div id="deviceready">
-                    <script type="text/javascript" src="phonegap.js"></script>
-                    <script type="text/javascript" src="js/jQuery-2.2.0.min.js"></script>
-                    <script type="text/javascript" src="js/index.js"></script>
-                    
-                    <div id="game">
-                    
-                    
-                    	<div id="accelerometer">Waiting for accelerometer...</div>
-                    
-           			</div>
+            <div id="game">
+                
+                
+                <div id="accelerometer">Waiting for accelerometer...</div>
+                
             </div>
         </div>
     </body>
@@ -61,6 +55,7 @@
 		function startSession(){
 			$('#startpage').hide();
 			$('#session').show();
+			$('#session').attr('style', 'background-color: red !important');
 			
 			var count = 0;
 			// Audio player
