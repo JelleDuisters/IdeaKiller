@@ -104,22 +104,6 @@ h2 {
     color: white!important; 
 	background: rgba(255,255,255,0.5);
 }
-/*:-moz-placeholder { 
-    color: white!important; 
-	background: rgba(255,255,255,0.5);
-}
-::-moz-placeholder { 
-    color: white!important; 
-	background: rgba(255,255,255,0.5);
-}
-:-ms-input-placeholder { 
-    color: white!important; 
-	background: rgba(255,255,255,0.5);
-}*/
-#tekst:focus {
-	color: black;
-}
-
 .event {
     border-radius:4px;
     -webkit-border-radius:4px;
