@@ -58,8 +58,8 @@
 			stopSession();
 		};
 		function stopSession(){
-			stopWatch();
-			stopAudio();
+			startSession(stopWatch());
+			startSession(stopAudio());
 		};
 		function startSession(){
 			$('#startpage').hide();
