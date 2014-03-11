@@ -93,10 +93,12 @@ input {
 	position: absolute;
 	top: 30%;
 	width: 100%;
+	border: none;
+	color: black; 
     padding: 15px;
     background: rgba(255,255,255,0.5);
     margin: 0 0 10px 0;
-	font-size: 200%;
+	font-size: 150%;
 }
 
 .event {
