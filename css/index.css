@@ -78,7 +78,7 @@ h2 {
 	text-transform:uppercase;
 }
 #startpage {
-	background-color: #e6e6e6;
+	/*background-color: #e6e6e6;*/
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -111,7 +111,7 @@ h2 {
 	left: 0;
 	right: 0;
 	background-color: green;
-	
+	display: none;
 }
 ::-webkit-input-placeholder { /* WebKit browsers */
 	background: rgba(255,255,255,0.5);
