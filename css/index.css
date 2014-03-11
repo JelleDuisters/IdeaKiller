@@ -58,9 +58,6 @@ body {
                                       /* offset horizontal: half of image width and text area width */
     }
 }
-#background {
-	background-color: green;
-}
 h1 {
     font-size: 200px;
     font-weight: bold;
