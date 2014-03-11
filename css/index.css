@@ -100,6 +100,9 @@ input {
     margin: 0 0 10px 0;
 	font-size: 150%;
 }
+input:focus {
+	color: #F00;
+}
 
 .event {
     border-radius:4px;
