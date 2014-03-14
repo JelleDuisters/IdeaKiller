@@ -86,6 +86,15 @@ h2 {
 	right: 0;
 	padding: 50px;
 }
+#stop {
+	background: url(../img/kruisje.png);
+	border: none;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 61px;
+	height: 61px;
+}
 #tekst {
 	position: relative;
 	width: 100%;
