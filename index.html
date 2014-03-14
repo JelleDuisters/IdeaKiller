@@ -58,11 +58,31 @@
 		function gotoHome(){
 			$('#startpage').show();
 			$('#session').hide();
-			stopSession();
-		};
-		function stopSession(){
+			//stop listening to accelerometer
 			navigator.accelerometer.clearWatch(watchID);
 		};
+		
+		function holdPhoneUp(count){
+			playAudio("/android_asset/www/audio/gun.mp3");
+			count ++;
+			$('#session').css('background','red');
+			$('#tekst').hide();
+			
+			
+			if ($('#tekst').val() == ""){
+				$('#accelerometer').html("<h1>Idea Killer</h1><h2>"+count.toString()+"</h2>");
+			}else {
+				$('#accelerometer').html("<h1>"+$('#tekst').val()+"</h1><h2>"+count.toString()+"</h2>");
+			}
+		};
+		
+		function holdPhoneDown(count){
+			$('#session').css('background','green');
+			$('#accelerometer').html("<h2>"+count+"</h2>");
+			$('#tekst').show();
+		};
+		
+		//start listening to accelerometer
 		function startSession(){
 			$('#startpage').hide();
 			$('#session').show();
@@ -145,25 +165,11 @@
 				if(acceleration.y > 7){
 					if (i == 1){
 						//playAudio("http://www.soundjay.com/mechanical/gun-gunshot-01.mp3");
-						playAudio("/android_asset/www/audio/gun.mp3");
-						count ++;
-						$('#session').css('background','red');
-						$('#tekst').hide();
-						
-						
-						if ($('#tekst').val() == ""){
-							$('#accelerometer').html("<h1>Idea Killer</h1><h2>"+count.toString()+"</h2>");
-						}else {
-							$('#accelerometer').html("<h1>"+$('#tekst').val()+"</h1><h2>"+count.toString()+"</h2>");
-						}
+						holdPhoneUp(count);
 					}
 					i = 2;
 				}else {
 					i = 1;
-					$('#session').css('background','green');
-					$('#accelerometer').html("<h2>"+count+"</h2>");
-					//stopAudio();
-					$('#tekst').show();
 				}
 				
 			}
