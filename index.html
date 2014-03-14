@@ -52,13 +52,16 @@
         </div>
     </body>
     <script type="text/javascript" charset="utf-8">
+		// The watch id references the current `watchAcceleration`
+		var watchID = null;
+		
 		function gotoHome(){
 			$('#startpage').show();
 			$('#session').hide();
 			stopSession();
 		};
 		function stopSession(){
-			//TODO: Stop listening to sensor
+			navigator.accelerometer.clearWatch(watchID);
 		};
 		function startSession(){
 			$('#startpage').hide();
@@ -97,10 +100,7 @@
 				alert('code: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n');
 			}
-			
-			// The watch id references the current `watchAcceleration`
-			var watchID = null;
-		
+					
 			// Wait for device API libraries to load
 			//
 			document.addEventListener("deviceready", onDeviceReady, false);
