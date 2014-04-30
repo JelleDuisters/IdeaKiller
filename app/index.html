@@ -23,25 +23,172 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/jQuery-2.2.0.min.js"></script>
+        <script type="text/javascript" src="js/infobox.js"></script>
+   		<script type="application/javascript" src="js/functions.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <title>iDea Killer</title>
     </head>
     <body>
-    	<div class="page" id="startpage">
-            <div id="deviceready">
-                <script type="text/javascript" src="phonegap.js"></script>
-                <script type="text/javascript" src="js/jQuery-2.2.0.min.js"></script>
-                <script type="text/javascript" src="js/index.js"></script>
-                
-                <form>
-                	<br><br>
-                    <h3>Voer een tekst in die op de kaart komt te staan:</h3>
-                    <br><br>
-                    <input type='text' id='tekst' placeholder='Idea Killer'/>
-                    <br><br>
-                    <input type="button" id="go" value="Go" onClick="startSession()"/>
-                </form>
+    <div id="container"> 
+  
+    <div id="header">
+      <div class="btnBack"><a href="#">&laquo;</a></div>
+      <div id="logo">iDea Killer</div>
+    </div>
+   
+    <div id="status">
+      <div id="loading">
+        <h1>Laden</h1>
+        een moment geduld a.u.b.
+      </div>
+    </div>
+    
+    <!-- CONTENT -->
+    <div id="content">
+    
+      <!-- card -->
+      <div class="panel" id="card">
+        <div id="card-wrapper" class="wrapper">
+          <div id="card-scroller" class="scroller">
+            <div class="data">
+
             </div>
+          </div>
         </div>
+      </div>
+      
+       <!-- card detail -->
+      <div class="panel" id="card-detail">
+        <div id="card-detail-wrapper" class="wrapper">
+          <div id="card-detail-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- stats -->
+      <div class="panel" id="stats">
+        <div id="stats-wrapper" class="wrapper">
+          <div id="stats-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+       <!-- stats detail -->
+      <div class="panel" id="stats-detail">
+        <div id="stats-detail-wrapper" class="wrapper">
+          <div id="stats-detail-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- rules -->
+      <div class="panel" id="rules">
+        <div id="rules-wrapper" class="wrapper">
+          <div id="rules-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+       <!-- rules detail -->
+      <div class="panel" id="rules-detail">
+        <div id="rules-detail-wrapper" class="wrapper">
+          <div id="rules-detail-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- info -->
+      <div class="panel" id="info">
+        <div id="info-wrapper" class="wrapper">
+          <div id="info-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+       <!-- info detail -->
+      <div class="panel" id="info-detail">
+        <div id="info-detail-wrapper" class="wrapper">
+          <div id="info-detail-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <!-- Settings -->
+      <div class="panel" id="settings">
+        <div id="settings-wrapper" class="wrapper">
+          <div id="settings-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+       <!-- Settings detail -->
+      <div class="panel" id="settings-detail">
+        <div id="settings-detail-wrapper" class="wrapper">
+          <div id="settings-detail-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <div id="footer">
+      <ul>
+        <li><a href="#" class="btn" id="btn-card"><img src="images/icons/icon_card.png" alt=""><br>Card</a></li>
+        <li><a href="#" class="btn" id="btn-stats"><img src="images/icons/icon_stat.png" alt=""><br>Stats</a></li>
+        <li><a href="#" class="btn" id="btn-rules"><img src="images/icons/icon_note.png" alt=""><br>Rules</a></li>
+        <li><a href="#" class="btn" id="btn-info"><img src="images/icons/icon_info.png" alt=""><br>Info</a></li>
+        <li><a href="#" class="btn" id="btn-settings"><img src="images/icons/icon_setting.png" alt=""><br>Settings</a></li>
+      </ul>
+    </div>
+    
+  </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
         <div class="page" id="session">
             <div id="game">
                 
@@ -56,7 +203,7 @@
 		var watchID = null;
 		
 		function gotoHome(){
-			$('#startpage').show();
+			$('#content').show();
 			$('#session').hide();
 			//stop listening to accelerometer
 			navigator.accelerometer.clearWatch(watchID);
@@ -64,7 +211,7 @@
 				
 		//start listening to accelerometer
 		function startSession(){
-			$('#startpage').hide();
+			$('#content').hide();
 			$('#session').show();
 			
 			var count = 0;
