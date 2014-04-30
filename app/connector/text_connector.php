@@ -11,7 +11,7 @@
 ?>
 
 	<h1><?php echo ucfirst($_POST['page']); ?></h1>
-    <form action="#" method="post">
+    <form action="#" method="post" style="z-index: 5;">
         <input class="sessioninput" placeholder="Session naam" required="required" type="text" name="bedrijf/organisatie">
         <input class="sessioninput" placeholder="Speler 1" type="text" required="required"  name="Deelnemer 1">
         <input class="sessioninput" placeholder="Speler 2" type="text" required="required"  name="Deelnemer 2">
