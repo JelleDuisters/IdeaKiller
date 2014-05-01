@@ -23,9 +23,7 @@
           	<option value="Fluitje">Fluitje</option>
         </select>
 
-            <h2>Tekst op de kaart:</h2>
-            <input type='text' id='tekst' placeholder='Idea Killer'/>
-        <input type="button" class="sessioninput" id="go" value="Start" onClick="parent.startSession()">
+            
     </form>
 
 <?php
