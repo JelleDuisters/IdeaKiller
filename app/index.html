@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0;"/> 
+    	<meta name="apple-mobile-web-app-capable" content="yes" />
+    	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+        
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="style/style.css" />
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/jQuery-2.2.0.min.js"></script>
+        <script type="text/javascript" src="js/iscroll.js"></script>
+    	<script type="text/javascript" src="js/infobox.js"></script>
+    	<script type="application/javascript" src="js/functions.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <title>iDea Killer</title>
+    </head>
+    <body>
+
+    <div class="page" style="z-index: 2;" id="session">
+        <!--<iframe id="session" style="z-index: 2;" src="http://www.nettt.nl/klanten/sjra" height="100%" width="100%" frameborder="0"></iframe>-->
+
+            <div id="game">
+                <h2>Tekst op de kaart:</h2>
+        		<input type='text' id='tekst' placeholder='Idea Killer'/>
+        		<input type="button" class="sessioninput" id="go" value="Start" onClick="parent.startSession()">
+                
+                <div id="accelerometer">Waiting for accelerometer...</div>
+                <input type="button" id="stop" onClick="gotoHome()"/>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" charset="utf-8">
+		$( document ).ready(function() {
+			// The watch id references the current `watchAcceleration`
+			var watchID = null;
+			
+			function gotoHome(){
+				$('#content').show();
+				$('#session').hide();
+				//stop listening to accelerometer
+				navigator.accelerometer.clearWatch(watchID);
+			};
+					
+			//start listening to accelerometer
+			function startSession(){
+				$('#content').hide();
+				$('#session').show();
+				
+				var count = 0;
+				// Audio player
+				var my_media = null;
+		
+				// Play audio
+				//
+				function playAudio(src) {
+					if (my_media == null) {
+						// Create Media object from src
+						my_media = new Media(src, onSuccess, onError);
+					} // else play current audio
+					// Play audio
+					my_media.play();
+		
+				}
+				function stopAudio() {
+					if (my_media) {
+						my_media.stop();
+					}
+				}
+		
+				// onSuccess Callback
+				//
+				function onSuccess() {
+					console.log("playAudio():Audio Success");
+				}
+		
+				// onError Callback
+				//
+				function onError(error) {
+					alert('code: '    + error.code    + '\n' +
+						  'message: ' + error.message + '\n');
+				}
+						
+				// Wait for device API libraries to load
+				//
+				document.addEventListener("deviceready", onDeviceReady, false);
+			
+				// device APIs are available
+				//
+				function onDeviceReady() {
+					startWatch();
+				}
+			
+				// Start watching the acceleration
+				//
+				function startWatch() {
+			
+					// Update acceleration every x seconds
+					var options = { frequency: 100 };
+			
+					watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+				}
+			
+				// Stop watching the acceleration
+				//
+				function stopWatch() {
+					if (watchID) {
+						navigator.accelerometer.clearWatch(watchID);
+						watchID = null;
+					}
+				}
+			
+				// onSuccess: Get a snapshot of the current acceleration
+				//
+				function onSuccess(acceleration) {
+					var element = document.getElementById('accelerometer');
+					/*element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
+										'Acceleration Y: ' + acceleration.y         + '<br />' +
+										'Acceleration Z: ' + acceleration.z         + '<br />' +
+										'Timestamp: '      + acceleration.timestamp + '<br />';*/
+										
+										
+					
+					
+					if(acceleration.y > 7){
+						if (i == 1){
+							//playAudio("http://www.soundjay.com/mechanical/gun-gunshot-01.mp3");
+							playAudio("/android_asset/www/audio/gun.mp3");
+							count ++;
+							$('#session').css('background','red');
+							$('#tekst').hide();
+							
+							
+							if ($('#tekst').val() == ""){
+								$('#accelerometer').html("<h1>Idea Killer</h1><h2>"+count.toString()+"</h2>");
+							}else {
+								$('#accelerometer').html("<h1>"+$('#tekst').val()+"</h1><h2>"+count.toString()+"</h2>");
+							}
+						}
+						i = 2;
+					}else {
+						i = 1;
+						$('#session').css('background','green');
+						$('#accelerometer').html("<h2>"+count+"</h2>");
+						//stopAudio();
+						$('#tekst').show();
+					}
+					
+				}
+				
+				
+				// onError: Failed to get the acceleration
+				//
+				function onError() {
+					alert('onError!');
+				}
+			}
+		});
+		
+		
+	</script>
+</html>
