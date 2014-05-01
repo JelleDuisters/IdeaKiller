@@ -22,8 +22,13 @@
           	<option value="Schreeuw">Schreeuw</option>
           	<option value="Fluitje">Fluitje</option>
         </select>
+<<<<<<< HEAD
         <h2>Tekst op de kaart:</h2>
         <input type='text' id='tekst' placeholder='Idea Killer'/>
+=======
+            <h2>Tekst op de kaart:</h2>
+            <input type='text' id='tekst' placeholder='Idea Killer'/>
+>>>>>>> 9ba7f60ce43f2f20086f504c83359f15990c8e42
         <input type="button" class="sessioninput" id="go" value="Start" onClick="parent.startSession()">
     </form>
 
