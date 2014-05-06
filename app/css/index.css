@@ -125,13 +125,12 @@ h2 {
 #count {
 	position: absolute;
 	bottom: 20px;
-	width: 200px;
+	width: 100%;
 	text-align: center;
-	margin: 100px auto;
 }
 #cardText {
-	position: relative;
-	top: 40%;
+	position: absolute;
+	top: 400px;
 }
 ::-webkit-input-placeholder { /* WebKit browsers */
 	background: rgba(255,255,255,0.5);
