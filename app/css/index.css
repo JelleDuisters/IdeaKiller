@@ -127,7 +127,11 @@ h2 {
 	bottom: 20px;
 	width: 200px;
 	text-align: center;
-	margin: 0 auto;
+	margin: 100px auto;
+}
+#cardText {
+	position: relative;
+	top: 40%;
 }
 ::-webkit-input-placeholder { /* WebKit browsers */
 	background: rgba(255,255,255,0.5);
