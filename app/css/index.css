@@ -58,7 +58,7 @@ body {
     }
 }
 h1 {
-    font-size: 200px;
+    font-size: 70px;
     font-weight: bold;
     margin:0px;
     overflow:auto;
@@ -68,7 +68,7 @@ h1 {
 	text-transform:uppercase;
 }
 h2 {
-    font-size: 100px;
+    font-size: 30px;
     font-weight: bold;
     margin:0px;
     overflow:visible;
@@ -121,6 +121,13 @@ h2 {
 	right: 0;
 	background-color: green;
 	display: none;
+}
+#count {
+	position: absolute;
+	bottom: 20px;
+	width: 200px;
+	text-align: center;
+	margin: 0 auto;
 }
 ::-webkit-input-placeholder { /* WebKit browsers */
 	background: rgba(255,255,255,0.5);

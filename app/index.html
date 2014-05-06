@@ -198,7 +198,7 @@
             <div id="game">
                 
                 
-                <div id="accelerometer">Waiting for accelerometer...</div>
+                <div id="accelerometer"><h1>Waiting for accelerometer...</h1></div>
                 <input type="button" id="stop" onClick="gotoHome()"/>
             </div>
         </div>
@@ -306,9 +306,9 @@
 
 
 						if ($('#tekst').val() == ""){
-							$('#accelerometer').html("<h2>Idea Killer</h2><h3>"+count.toString()+"</h3>");
+							$('#accelerometer').html("<h1>Idea Killer</h1><h2 id='count'>"+count.toString()+"</h2>");
 						}else {
-							$('#accelerometer').html("<h2>"+$('#tekst').val()+"</h2><h3>"+count.toString()+"</h3>");
+							$('#accelerometer').html("<h1>"+$('#tekst').val()+"</h1><h2>"+count.toString()+"</h2>");
 						}
 					}
 					i = 2;
