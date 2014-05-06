@@ -19,8 +19,11 @@
         <h2>Geluid: </h2>
         <select id="dropdown" class="sessioninput">
           	<option value="Pistool">Pistool</option>
-          	<option value="Schreeuw">Schreeuw</option>
-          	<option value="Fluitje">Fluitje</option>
+          	<option value="Sirene">Sirene</option>
+          	<option value="Stop it">Stop it!</option>
+            <option value="Oh oh">Oh oh</option>
+          	<option value="No way">No way!</option>
+          	<option value="No no">No no</option>
         </select>
         <h2>Tekst op kaart: </h2>
         <input class="sessioninput" type='text' id='tekst' placeholder='Idea Killer'/>

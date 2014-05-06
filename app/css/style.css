@@ -528,6 +528,7 @@ a.btn-back{
 	 -webkit-appearance: none;
     border-radius: 0;
 	overflow: visible;
+	background: white;
 }
 .sessioninput#dropdown {
 	width: 100%;
