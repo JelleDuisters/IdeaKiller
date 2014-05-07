@@ -589,31 +589,32 @@
 	
 	
 	$(document).ready(function() {
+		$('.addtouch').bind('touchstart touchend', function(e) {
+			e.preventDefault();
+			$(this).toggleClass('active');
+		});
 		
-		$("#btn-card").click(function(){
+		
+		$("#btn-card").bind('touchstart', function(e) {
 			loadText('card'); 
 		});
 		
 		// Set button actions
-		$("#btn-stats").click(function(){
+		$("#btn-stats").bind('touchstart', function(e) {
 			loadText('stats');
 		});
 		
 		// Set button actions
-		$("#btn-rules").click(function(){
+		$("#btn-rules").bind('touchstart', function(e) {
 			loadText('rules');
 		});
 		
-		$("#btn-info").click(function(){
+		$("#btn-info").bind('touchstart', function(e) {
 			loadText('info');
 		});
 
-		$("#btn-settings").click(function(){
-			loadText('settings');
-		});
-
 		
-		$("#header .btnBack").click(function(){
+		$("#header .btnBack").bind('touchstart', function(e) {
 			goBack();
 		});
 
