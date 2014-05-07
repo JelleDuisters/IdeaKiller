@@ -158,23 +158,8 @@
             </div>
             
           </div>
-    	<div class="page" id="startpage">
-        	
-            
-            <div id="deviceready">
-                <form>
-                	<br><br>
-                    <h3>Voer een tekst in die op de kaart komt te staan:</h3>
-                    <br><br>
-                    <input type='text' id='tekst' placeholder='Idea Killer'/>
-                    <br><br>
-                    <input type="button" id="go" value="Go" onClick="startSession()"/>
-                </form>
-            </div>
-        </div>
         <div class="page" id="session">
             <div id="game">
-                
                 
                 <div id="accelerometer"><h2 id="count">Waiting for accelerometer...</h2></div>
                 <input type="button" id="stop" onClick="gotoHome()"/>
@@ -200,8 +185,8 @@
 		}
 		
 		//start listening to accelerometer
-		function startSession(){
-			alert($("#styleDropdown").val());
+		function startSession(){	
+			
 			$('#container').hide();
 			$('#session').show();
 
@@ -289,7 +274,8 @@
 						strobe('#session');
 						
 						//color the card
-						$('#session').css('background',$("#styleDropdown").val());
+						var color = $("#styleDropdown").val().toString();
+						$('#session').css('background', color);
 
 
 						if ($('#tekst').val() == ""){
