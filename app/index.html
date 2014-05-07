@@ -215,7 +215,12 @@
 			//stop listening to accelerometer
 			navigator.accelerometer.clearWatch(watchID);
 		};
-
+		
+		//strobe function
+		function strobe(object){
+			$(object).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25);
+		}
+		
 		//start listening to accelerometer
 		function startSession(){
 			$('#container').hide();
@@ -302,6 +307,7 @@
 						playAudio("/android_asset/www/audio/"+$('#dropdown').val()+".mp3");
 						count ++;
 						$('#session').css('background','red');
+						strobe('#session');
 						$('#tekst').hide();
 
 
