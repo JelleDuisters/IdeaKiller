@@ -275,14 +275,34 @@
 						
 						//color the card
 						var color = $("#styleDropdown").val().toString();
-						$('#session').css('background', color);
-
-
-						if ($('#tekst').val() == ""){
-							$('#accelerometer').html("<h1 id='cardText'>Idea Killer</h1><h2 id='count'>"+count.toString()+"</h2>");
+						
+						if (color.indexOf("url") > -1){
+							// add back image
+							$('#session').css('background', color);
+						}else if (color == 'red' || color == 'black'){
+							// add color
+							$('#session').css('background', color);
+							
+							// add tekst
+							if ($('#tekst').val() == ""){
+								$('#accelerometer').html("<h1 id='cardText'>Idea Killer</h1><h2 id='count'>"+count.toString()+"</h2>");
+							}else {
+								$('#accelerometer').html("<h1 id='cardText'>"+$('#tekst').val()+"</h1><h2 id='count'>"+count.toString()+"</h2>");
+							}
 						}else {
-							$('#accelerometer').html("<h1 id='cardText'>"+$('#tekst').val()+"</h1><h2 id='count'>"+count.toString()+"</h2>");
+							// add color
+							$('#session').css('background', 'red');
+							
+							// add tekst
+							if ($('#tekst').val() == ""){
+								$('#accelerometer').html("<h1 id='cardText'>Idea Killer</h1><h2 id='count'>"+count.toString()+"</h2>");
+							}else {
+								$('#accelerometer').html("<h1 id='cardText'>"+$('#tekst').val()+"</h1><h2 id='count'>"+count.toString()+"</h2>");
+							}
 						}
+
+
+						
 					}
 					i = 2;
 				}else {

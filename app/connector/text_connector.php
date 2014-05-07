@@ -21,7 +21,7 @@
         <select id="styleDropdown" class="sessioninput">
           	<option value="black">Zwart</option>
          	<option value="red">Rood</option>
-          	<option value="Pistool">Pistool</option>
+          	<option value="url(/img/gun.jpg)">Pistool</option>
         </select>
         
         <h2>Geluid: </h2>
