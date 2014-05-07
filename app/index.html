@@ -144,6 +144,7 @@
                   </div>
                 </div>
               </div>
+             
         
             </div>
             
@@ -153,6 +154,7 @@
                 <li><a href="#" class="btn" id="btn-stats"><img class="addtouch" src="img/icons/icon_stat.png" alt=""><br>Stats</a></li>
                 <li><a href="#" class="btn" id="btn-rules"><img class="addtouch" src="img/icons/icon_note.png" alt=""><br>Rules</a></li>
                 <li><a href="#" class="btn" id="btn-info"><img class="addtouch" src="img/icons/icon_info.png" alt=""><br>Info</a></li>
+                <li><a href="#" class="btn" id="btn-settings"><img class="addtouch" src="img/icons/icon_setting.png" alt=""><br>Settings</a></li>
               </ul>
             </div>
             
@@ -195,7 +197,7 @@
 		
 		//strobe function
 		function strobe(object){
-			$(object).stop().fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25);
+			$(object).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25);
 		}
 		
 		//start listening to accelerometer
@@ -284,7 +286,8 @@
 						playAudio("/android_asset/www/audio/"+$('#dropdown').val()+".mp3");
 						count ++;
 						$('#session').css('background','red');
-						strobe("#session");
+						strobe('#session');
+						$('#tekst').hide();
 
 
 						if ($('#tekst').val() == ""){
