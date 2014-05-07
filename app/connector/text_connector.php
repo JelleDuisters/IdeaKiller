@@ -16,6 +16,12 @@
         <input class="sessioninput" placeholder="Speler 1" type="text" required="required"  name="Deelnemer 1">
         <input class="sessioninput" placeholder="Speler 2" type="text" required="required"  name="Deelnemer 2">
         <input class="sessioninput" placeholder="Speler 3" type="text" required="required"  name="Deelnemer 3">
+        <h2>Kaart stijl: </h2>
+        <select id="dropdown" class="sessioninput">
+          	<option value="Zwart">Zwart</option>
+         	<option value="Rood">Rood</option>
+          	<option value="Pistool">Pistool</option>
+        </select>
         <h2>Geluid: </h2>
         <select id="dropdown" class="sessioninput">
           	<option value="Pistool">Pistool</option>
@@ -29,29 +35,6 @@
         <input class="sessioninput" type='text' id='tekst' placeholder='Idea Killer'/>
         <br><br>
         <input type="button" id="go" value="Go" onClick="startSession()"/>
-    </form>
-
-<?php
-	} else if($_POST['page'] == "settings"){
-?>
-
-	<h1><?php echo ucfirst($_POST['page']); ?></h1>
-    <form action="#" method="post">
-    	<h2>Tekst op kaart:</h2>
-        <input class="sessioninput" placeholder="Idea Killer" required="required" type="text" name="naam">
-        <h2>Geluid: </h2>
-        <select id="dropdown" class="sessioninput">
-          	<option value="Pistool">Pistool</option>
-          	<option value="Schreeuw">Schreeuw</option>
-          	<option value="Fluitje">Fluitje</option>
-        </select>
-        <h2>Kaart stijl: </h2>
-        <select id="dropdown" class="sessioninput">
-          	<option value="Zwart">Zwart</option>
-         	<option value="Rood">Rood</option>
-          	<option value="Pistool">Pistool</option>
-        </select>
-        
     </form>
 
 <?php

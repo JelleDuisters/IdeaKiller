@@ -144,28 +144,6 @@
                   </div>
                 </div>
               </div>
-             
-              <!-- Settings -->
-              <div class="panel" id="settings">
-                <div id="settings-wrapper" class="wrapper">
-                  <div id="settings-scroller" class="scroller">
-                    <div class="data">
-        
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-               <!-- Settings detail -->
-              <div class="panel" id="settings-detail">
-                <div id="settings-detail-wrapper" class="wrapper">
-                  <div id="settings-detail-scroller" class="scroller">
-                    <div class="data">
-        
-                    </div>
-                  </div>
-                </div>
-              </div>
         
             </div>
             
@@ -175,7 +153,6 @@
                 <li><a href="#" class="btn" id="btn-stats"><img class="addtouch" src="img/icons/icon_stat.png" alt=""><br>Stats</a></li>
                 <li><a href="#" class="btn" id="btn-rules"><img class="addtouch" src="img/icons/icon_note.png" alt=""><br>Rules</a></li>
                 <li><a href="#" class="btn" id="btn-info"><img class="addtouch" src="img/icons/icon_info.png" alt=""><br>Info</a></li>
-                <li><a href="#" class="btn" id="btn-settings"><img class="addtouch" src="img/icons/icon_setting.png" alt=""><br>Settings</a></li>
               </ul>
             </div>
             
@@ -218,7 +195,7 @@
 		
 		//strobe function
 		function strobe(object){
-			$(object).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25);
+			$(object).stop().fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25).fadeOut(25).delay(25).fadeIn(25).delay(25);
 		}
 		
 		//start listening to accelerometer
@@ -320,7 +297,7 @@
 					i = 2;
 				}else {
 					i = 1;
-					$('#session').css('background','green');
+					$('#session').stop().css('background','green');
 					$('#accelerometer').html("<h2 id='count'>"+count+"</h2>");
 					//stopAudio();
 					$('#tekst').show();
