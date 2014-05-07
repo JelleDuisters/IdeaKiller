@@ -120,7 +120,7 @@ h2 {
 	left: 0;
 	right: 0;
 	background-color: green;
-	background: no-repeat;
+	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	display: none;
