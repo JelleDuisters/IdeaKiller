@@ -181,7 +181,7 @@
 		
 		//strobe function
 		function strobe(object){
-			$(object).stop().hide().delay(50).show().delay(50).hide().delay(50).show().delay(50).hide().delay(50).show().delay(50).hide().delay(50).show().delay(50).hide().delay(50).show();
+			$(object).stop().fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50);
 		}
 		
 		//start listening to accelerometer
@@ -189,6 +189,7 @@
 			
 			$('#container').hide();
 			$('#session').show();
+			
 
 			var count = 0;
 			// Audio player
