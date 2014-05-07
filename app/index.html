@@ -284,9 +284,11 @@
 						//playAudio("http://www.soundjay.com/mechanical/gun-gunshot-01.mp3");
 						playAudio("/android_asset/www/audio/"+$('#dropdown').val()+".mp3");
 						count ++;
-						$('#session').css('background','red');
+						
 						strobe('#session');
-						$('#tekst').hide();
+						
+						//color the card
+						$('#session').css('background',$('#styleDropdown').val());
 
 
 						if ($('#tekst').val() == ""){

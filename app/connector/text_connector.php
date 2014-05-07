@@ -18,8 +18,8 @@
         <input class="sessioninput" placeholder="Speler 3" type="text" required="required"  name="Deelnemer 3">
         <h2>Kaart stijl: </h2>
         <select id="styleDropdown" class="sessioninput">
-          	<option value="Zwart">Zwart</option>
-         	<option value="Rood">Rood</option>
+          	<option value="black">Zwart</option>
+         	<option value="red">Rood</option>
           	<option value="Pistool">Pistool</option>
         </select>
         <h2>Geluid: </h2>
