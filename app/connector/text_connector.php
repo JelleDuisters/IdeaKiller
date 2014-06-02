@@ -12,7 +12,7 @@
 
 	<h1><?php echo ucfirst($_POST['page']); ?></h1>
     <form action="#" method="post">
-        <input class="sessioninput" placeholder="Session naam" required="required" type="text" name="bedrijf/organisatie">
+        <input class="sessioninput" placeholder="Session naam" required="required" type="text" name="sessionname">
         <input class="sessioninput" placeholder="Speler 1" type="text" required="required"  name="Deelnemer 1">
         <input class="sessioninput" placeholder="Speler 2" type="text" required="required"  name="Deelnemer 2">
         <input class="sessioninput" placeholder="Speler 3" type="text" required="required"  name="Deelnemer 3">
@@ -37,8 +37,14 @@
         <h2>Tekst op kaart: </h2>
         <input class="sessioninput" type='text' id='tekst' placeholder='Idea Killer'/>
         <br><br>
-        <input type="button" id="go" value="Go" onClick="startSession()"/>
+        <input type="button" id="go" value="Go" onClick="storeForm()"/>
     </form>
+    <script>
+		if (window.localStorage.getItem("sessionname") =! null){
+			$(".sessioninput").val(window.localStorage.getItem("sessionname"));
+		}else {
+		}
+    </script>
 
 <?php
 	} else if($_POST['page'] == "card-detail" && $_POST['id'] == "1"){

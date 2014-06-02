@@ -171,7 +171,17 @@
 		var watchID = null;
 		$('#startpage').hide();
 		
-
+		
+		function storeForm() {
+			var sessionname = $(['name="sessionname"']).val();
+			
+			window.localStorage.setItem("sessionname", sessionname);
+			
+			return false;
+			
+			startSession()
+		}
+		
 		function gotoHome(){
 			$('#session').hide();
 			$('#container').show();
