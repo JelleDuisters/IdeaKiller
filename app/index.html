@@ -172,20 +172,12 @@
 		$('#startpage').hide();
 		
 		
-		alert (window.localStorage.getItem("sessionname"));
-		if (window.localStorage.getItem("sessionname") =! null){
-			$(".sessioninput").val(window.localStorage.getItem("sessionname"));
-		}else {
-		}
-		
 		function storeForm() {
 			var sessionname = $(['name="sessionname"']).val();
 			
 			window.localStorage.setItem("sessionname", sessionname);
 			
-			alert (window.localStorage.getItem("sessionname"));
-			
-			//startSession()
+			startSession()
 		}
 		
 		function gotoHome(){
