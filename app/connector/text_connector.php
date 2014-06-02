@@ -40,6 +40,7 @@
         <input type="button" id="go" value="Go" onClick="storeForm()"/>
     </form>
     <script>
+		alert (window.localStorage.getItem("sessionname"));
 		if (window.localStorage.getItem("sessionname") =! null){
 			$(".sessioninput").val(window.localStorage.getItem("sessionname"));
 		}else {
