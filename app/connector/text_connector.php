@@ -12,7 +12,7 @@
 
 	<h1><?php echo ucfirst($_POST['page']); ?></h1>
     <form action="#" method="post">
-        <input class="sessioninput" placeholder="Session naam" required="required" type="text" name="sessionname">
+        <input class="sessioninput" placeholder="Session naam" required="required" type="text" id="sessionname" name="sessionname">
         <input class="sessioninput" placeholder="Speler 1" type="text" required="required"  name="Deelnemer 1">
         <input class="sessioninput" placeholder="Speler 2" type="text" required="required"  name="Deelnemer 2">
         <input class="sessioninput" placeholder="Speler 3" type="text" required="required"  name="Deelnemer 3">
@@ -41,9 +41,10 @@
     </form>
  <script>
 		
+		
 		if (window.localStorage.getItem("sessionname") === null){
-			$(".sessioninput").val(window.localStorage.getItem("sessionname"));
 		}else {
+			$("#sessionname").val(window.localStorage.getItem("sessionname"));
 		}
     </script><?php
 	} else if($_POST['page'] == "card-detail" && $_POST['id'] == "1"){
