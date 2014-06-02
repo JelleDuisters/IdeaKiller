@@ -173,15 +173,20 @@
 		
 		
 		function storeForm() {
-			alert ('$("#sessionname")' + $("#sessionname").val());
 			
-			var sessionname = $("#sessionname").val();
+			var sessioninputs = document.getElementsByClassName("sessioninput");
+
+			for (var i=0, max=sessioninputs.length; i < max; i++) {
+				var sessionname = this.value;
+				
+				window.localStorage.setItem("sessionname", this.name);
+			}
 			
-			window.localStorage.setItem("sessionname", sessionname);
+			/*var sessionname = $("#sessionname").val();
 			
-			alert ("window.localStorage.getItem('sessionname'))= " + window.localStorage.getItem("sessionname"));
+			window.localStorage.setItem("sessionname", sessionname);*/
 			
-			//startSession()
+			startSession()
 		}
 		
 		function gotoHome(){
