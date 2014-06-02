@@ -177,9 +177,9 @@
 			var sessioninputs = document.getElementsByClassName("sessioninput");
 
 			for (var i=0, max=sessioninputs.length; i < max; i++) {
-				var sessionname = this.value;
 				
-				window.localStorage.setItem("sessionname", this.name);
+				window.localStorage.setItem(this.name, this.value);
+				
 			}
 			
 			/*var sessionname = $("#sessionname").val();
