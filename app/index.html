@@ -173,13 +173,13 @@
 		
 		
 		function storeForm() {
-			alert ("$([name=sessionname']).val()=  " . $(['name="sessionname"']).val());
+			alert ("name=sessionname" + $(['name="sessionname"']).val());
 			
 			var sessionname = $(['name="sessionname"']).val();
 			
 			window.localStorage.setItem("sessionname", sessionname);
 			
-			alert ("window.localStorage.getItem('sessionname'))= " . window.localStorage.getItem("sessionname"));
+			alert ("window.localStorage.getItem('sessionname'))= " + window.localStorage.getItem("sessionname"));
 			
 			//startSession()
 		}
