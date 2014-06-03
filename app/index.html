@@ -172,6 +172,16 @@
 		$('#startpage').hide();
 		
 		
+		
+		//Voeg speler toe:
+		function voegspelertoe(){
+			
+			var spelerid = $('.speler').length + 1;
+			
+			$( "#spelernaam" + $('.speler').length ).after( '<input class="sessioninput speler" placeholder="Speler '+spelerid+'" type="text" required="required" id="spelernaam' + spelerid + '" name="deelnemer'+spelerid+'">' );
+			
+		}
+		
 		function storeForm() {
 			
 			$( ".sessioninput" ).each(function( index ) {

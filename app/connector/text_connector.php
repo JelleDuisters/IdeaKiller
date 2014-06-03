@@ -13,9 +13,10 @@
 	<h1><?php echo ucfirst($_POST['page']); ?></h1>
     <form action="#" method="post">
         <input class="sessioninput" placeholder="Session naam" required="required" type="text" id="sessionname" name="sessionname">
-        <input class="sessioninput" placeholder="Speler 1" type="text" required="required" id="spelernaam1" name="deelnemer1">
-        <input class="sessioninput" placeholder="Speler 2" type="text" required="required" id="spelernaam2" name="deelnemer2">
-        <input class="sessioninput" placeholder="Speler 3" type="text" required="required" id="spelernaam3" name="deelnemer3">
+        <input class="sessioninput speler" placeholder="Speler 1" type="text" required="required" id="spelernaam1" name="deelnemer1">
+        <input class="sessioninput speler" placeholder="Speler 2" type="text" required="required" id="spelernaam2" name="deelnemer2">
+        <input class="sessioninput speler" placeholder="Speler 3" type="text" required="required" id="spelernaam3" name="deelnemer3">
+        <input type="button" id="extraspeler" value="Voeg speler toe" onclick="voegspelertoe()" />
         
         <h2>Kaart stijl: </h2>
         <select id="styleDropdown" class="sessioninput">
@@ -40,33 +41,15 @@
         <input type="button" id="go" value="Go" onClick="storeForm()"/>
     </form>
  <script>
- 
- 
+ 	
+		//Stop opgeslagen variabelen in input velden: 
  		$( ".sessioninput" ).each(function( index ) {
 			
 				var id = $(this).attr("id");
 				$("#"+id).val(window.localStorage.getItem($(this).attr("name")));
 				
-				alert("window.localStorage.getItem($(this).attr('name'))= " + window.localStorage.getItem($(this).attr("name")));
-		
 		});
-			
-			
- 		var sessioninputs = document.getElementsByClassName("sessioninput");
-		
-		for (var i=0, max=sessioninputs.length; i < max; i++) {
-			
-			if (window.localStorage.getItem(this.name) === null){
-			}else {
-				$(this.id).val(window.localStorage.getItem(this.name));
-			}
-			
-		}
-		
-		/*if (window.localStorage.getItem("sessionname") === null){
-		}else {
-			$("#sessionname").val(window.localStorage.getItem("sessionname"));
-		}*/
+ 		
     </script><?php
 	} else if($_POST['page'] == "card-detail" && $_POST['id'] == "1"){
 		
