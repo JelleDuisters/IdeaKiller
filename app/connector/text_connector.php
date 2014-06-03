@@ -16,7 +16,7 @@
         <!--<input class="sessioninput speler" placeholder="Speler 1" type="text" required="required" id="spelernaam1" name="deelnemer1">
         <input class="sessioninput speler" placeholder="Speler 2" type="text" required="required" id="spelernaam2" name="deelnemer2">
         <input class="sessioninput speler" placeholder="Speler 3" type="text" required="required" id="spelernaam3" name="deelnemer3">-->
-        <input type="button" id="extraspeler" value="+" onclick="voegspelertoe()" />
+        <input type="button" id="extraspeler" value="+" onclick="voegspelertoe();" />
         
         <h2>Kaart stijl: </h2>
         <select id="styleDropdown" class="sessioninput">
@@ -38,9 +38,9 @@
         <h2>Tekst op kaart: </h2>
         <input class="sessioninput" name="kaarttekst" type='text' id='tekst' placeholder='Idea Killer'/>
         
-        <input type="button" id="wisinstellingen" value="Wis instellingen" onclick="wisinstellingen()" />
+        <input type="button" id="wisinstellingen" value="Wis instellingen" onclick="wis();" />
         <br><br>
-        <input type="button" id="go" value="Go" onClick="storeForm()"/>
+        <input type="button" id="go" value="Go" onClick="storeForm();"/>
     </form>
  <script>
  	
@@ -59,7 +59,6 @@
 			}
 			
 		}
-			
 		
 		//Stop opgeslagen variabelen in input velden: 
  		$( ".sessioninput" ).each(function( index ) {

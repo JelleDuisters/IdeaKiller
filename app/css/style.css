@@ -531,10 +531,12 @@ a.btn-back{
 
 #wisinstellingen {
 	position: relative;
-	height: 50px;
-	padding: 0 20px;
-	font-size: 200%;
+	float: right;
+	height: 30px;
+	padding: 0 10px;
+	font-size: 100%;
 	background-color: red;
+	margin-bottom: 10px;
 	color: white;
 	border: none;
 	text-transform:uppercase;
