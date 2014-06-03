@@ -25,7 +25,7 @@
         </select>
         
         <h2>Geluid: </h2>
-        <select id="dropdown" class="sessioninput">
+        <select id="dropdown" name="dropdownsound" class="sessioninput">
           	<option value="Pistool">Pistool</option>
           	<option value="Sirene">Sirene</option>
           	<option value="Stop it">Stop it!</option>
