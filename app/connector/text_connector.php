@@ -35,11 +35,23 @@
         </select>
         
         <h2>Tekst op kaart: </h2>
-        <input class="sessioninput" type='text' id='tekst' placeholder='Idea Killer'/>
+        <input class="sessioninput" name="kaarttekst" type='text' id='tekst' placeholder='Idea Killer'/>
         <br><br>
         <input type="button" id="go" value="Go" onClick="storeForm()"/>
     </form>
  <script>
+ 
+ 
+ 		$( ".sessioninput" ).each(function( index ) {
+			
+				var id = $(this).attr("id");
+				$("#"+id).val(window.localStorage.getItem($(this).attr("name")));
+				
+				alert("window.localStorage.getItem($(this).attr('name'))= " + window.localStorage.getItem($(this).attr("name")));
+		
+		});
+			
+			
  		var sessioninputs = document.getElementsByClassName("sessioninput");
 		
 		for (var i=0, max=sessioninputs.length; i < max; i++) {

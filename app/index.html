@@ -174,17 +174,12 @@
 		
 		function storeForm() {
 			
-			var sessioninputs = document.getElementsByClassName("sessioninput");
-
-			for (var i=0, max=sessioninputs.length; i < max; i++) {
+			$( ".sessioninput" ).each(function( index ) {
 				
-				window.localStorage.setItem(this.name, this.value);
+				window.localStorage.setItem($(this).attr("name"), $(this).val());
 				
-			}
+			});
 			
-			/*var sessionname = $("#sessionname").val();
-			
-			window.localStorage.setItem("sessionname", sessionname);*/
 			
 			startSession()
 		}
