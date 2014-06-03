@@ -517,12 +517,24 @@ a.btn-back{
 	border: none;
 	text-transform:uppercase;
 }
+
 #extraspeler {
 	position: relative;
-	width: 40%;
 	height: 50px;
-	font-size: 150%;
+	padding: 0 20px;
+	font-size: 200%;
 	background-color: #008000;
+	color: white;
+	border: none;
+	text-transform:uppercase;
+}
+
+#wisinstellingen {
+	position: relative;
+	height: 50px;
+	padding: 0 20px;
+	font-size: 200%;
+	background-color: red;
 	color: white;
 	border: none;
 	text-transform:uppercase;

@@ -13,10 +13,10 @@
 	<h1><?php echo ucfirst($_POST['page']); ?></h1>
     <form action="#" method="post">
         <input class="sessioninput" placeholder="Session naam" required="required" type="text" id="sessionname" name="sessionname">
-        <input class="sessioninput speler" placeholder="Speler 1" type="text" required="required" id="spelernaam1" name="deelnemer1">
+        <!--<input class="sessioninput speler" placeholder="Speler 1" type="text" required="required" id="spelernaam1" name="deelnemer1">
         <input class="sessioninput speler" placeholder="Speler 2" type="text" required="required" id="spelernaam2" name="deelnemer2">
-        <input class="sessioninput speler" placeholder="Speler 3" type="text" required="required" id="spelernaam3" name="deelnemer3">
-        <input type="button" id="extraspeler" value="Voeg speler toe" onclick="voegspelertoe()" />
+        <input class="sessioninput speler" placeholder="Speler 3" type="text" required="required" id="spelernaam3" name="deelnemer3">-->
+        <input type="button" id="extraspeler" value="+" onclick="voegspelertoe()" />
         
         <h2>Kaart stijl: </h2>
         <select id="styleDropdown" class="sessioninput">
@@ -37,11 +37,30 @@
         
         <h2>Tekst op kaart: </h2>
         <input class="sessioninput" name="kaarttekst" type='text' id='tekst' placeholder='Idea Killer'/>
+        
+        <input type="button" id="wisinstellingen" value="Wis instellingen" onclick="wisinstellingen()" />
         <br><br>
         <input type="button" id="go" value="Go" onClick="storeForm()"/>
     </form>
  <script>
  	
+		if (window.localStorage.getItem('deelnemer2') == null) {
+			
+				$("#sessionname").after('<input class="sessioninput speler" placeholder="Speler 1" type="text" required="required" id="spelernaam1" name="deelnemer1"><input class="sessioninput speler" placeholder="Speler 2" type="text" required="required" id="spelernaam2" name="deelnemer2"><input class="sessioninput speler" placeholder="Speler 3" type="text" required="required" id="spelernaam3" name="deelnemer3">');
+			
+		}else {
+			
+			for ( var i = 15; i > 0; i-- ) {
+				if (window.localStorage.getItem('deelnemer'+i)){
+					$( "#sessionname" ).after( '<input class="sessioninput speler" placeholder="Speler '+i+'" type="text" required="required" value="'+ window.localStorage.getItem('deelnemer'+i) +'" id="spelernaam' + i + '" name="deelnemer'+i+'">' );
+				}
+				
+				
+			}
+			
+		}
+			
+		
 		//Stop opgeslagen variabelen in input velden: 
  		$( ".sessioninput" ).each(function( index ) {
 			
