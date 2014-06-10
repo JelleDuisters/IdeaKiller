@@ -38,7 +38,7 @@
         <h2>Tekst op kaart: </h2>
         <input class="sessioninput" name="kaarttekst" type='text' id='tekst' placeholder='Idea Killer'/>
         
-        <input type="button" id="wisinstellingen" value="Wis instellingen" onclick="wis();" />
+        <input type="button" id="wisinstellingen" value="Wis alle instellingen" onclick="wis();" />
         <br><br>
         <input type="button" id="go" value="Go" onClick="storeForm();"/>
     </form>
@@ -52,7 +52,7 @@
 			
 			for ( var i = 15; i > 0; i-- ) {
 				if (window.localStorage.getItem('deelnemer'+i)){
-					$( "#sessionname" ).after( '<input class="sessioninput speler" placeholder="Speler '+i+'" type="text" required="required" value="'+ window.localStorage.getItem('deelnemer'+i) +'" id="spelernaam' + i + '" name="deelnemer'+i+'">' );
+					$( "#sessionname" ).after( '<input class="sessioninput speler" placeholder="Speler '+i+'" type="text" required="required" value="'+ window.localStorage.getItem('deelnemer'+i) +'" id="spelernaam' + i + '" name="deelnemer'+i+'"><input type="button" id="verwijderspeler'+i+'" class="verwijderknop" value="x" onclick="verwijderspeler(\'deelnemer'+i+'\')" />' );
 				}
 				
 				

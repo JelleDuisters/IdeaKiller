@@ -182,8 +182,17 @@
 			
 			var spelerid = $('.speler').length + 1;
 			
-			$( "#spelernaam" + $('.speler').length ).after( '<input class="sessioninput speler" placeholder="Speler '+spelerid+'" type="text" required="required" id="spelernaam' + spelerid + '" name="deelnemer'+spelerid+'">' );
+			$( "#verwijderspeler" + $('.speler').length ).after( '<input class="sessioninput speler" placeholder="Speler '+spelerid+'" type="text" required="required" id="spelernaam' + spelerid + '" name="deelnemer'+spelerid+'"><input type="button" id="verwijderspeler'+i+'" value="x" class="verwijderknop" onclick="verwijderspeler(\'deelnemer'+i+'\')" />' );
 			
+		}
+		
+		
+		function verwijderspeler(speler) {
+			
+			localStorage.removeItem(speler);
+			alert(speler);
+			window.location.reload();
+				
 		}
 		
 		function storeForm() {
