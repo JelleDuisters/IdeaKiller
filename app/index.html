@@ -217,17 +217,6 @@
 		function strobe(object){
 			$(object).stop().fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50);
 			
-			
-			var spelers;
-			
-			for ( var i = 15; i > 0; i-- ) {
-				if (window.localStorage.getItem('deelnemer'+i)){
-					
-     				var spelers = spelers + '<option value="deelnemer'+i+'">' + window.localStorage.getItem('deelnemer'+i) + '</option>';
-				}
-				
-			}
-			$("#game").delay(560).after('<div id="popup"><h3>Wie was het?</h3><select id="dropdownspelers" name="dropdownspelerkeuze" class="sessioninput">'+spelers+'</select></div>');
 		}
 		
 		//start listening to accelerometer
@@ -349,6 +338,22 @@
 								$('#accelerometer').html("<h1 id='cardText'>"+$('#tekst').val()+"</h1><h2 id='count'>"+count.toString()+"</h2>");
 							}
 						}
+						
+						var spelers;
+			
+						for ( var i = 15; i > 0; i-- ) {
+							if (window.localStorage.getItem('deelnemer'+i)){
+								
+								var spelers = spelers + '<option value="deelnemer'+i+'">' + window.localStorage.getItem('deelnemer'+i) + '</option>';
+							}
+							
+						}
+						
+						$("#game").after('<div id="popup"><h3>Wie was het?</h3><select id="dropdownspelers" name="dropdownspelerkeuze" class="sessioninput">'+spelers+'</select></div>');
+						
+						$( "#dropdownspelers" ).change(function() {
+						 	$("#popup").remove();
+						});
 
 
 						
