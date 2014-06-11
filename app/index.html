@@ -179,10 +179,11 @@
 		
 		//Voeg speler toe:
 		function voegspelertoe(){
+						
+			var nummer = $('.speler').length + 1;
 			
-			var spelerid = $('.speler').length + 1;
 			
-			$( "#verwijderspeler" + $('.speler').length ).after( '<input class="sessioninput speler" placeholder="Speler '+spelerid+'" type="text" required="required" id="spelernaam' + spelerid + '" name="deelnemer'+spelerid+'"><input type="button" id="verwijderspeler'+i+'" value="x" class="verwijderknop" onclick="verwijderspeler(\'deelnemer'+i+'\')" />' );
+			$( "#verwijderspeler" + $('.speler').length ).after( '<input class="sessioninput speler" placeholder="Speler '+nummer+'" type="text" required="required" id="spelernaam' + nummer + '" name="deelnemer'+nummer+'"><input type="button" id="verwijderspeler'+nummer+'" value="x" class="verwijderknop" onclick="verwijderspeler(deelnemer'+nummer+')" />' );
 			
 		}
 		
