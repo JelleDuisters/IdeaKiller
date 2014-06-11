@@ -93,6 +93,7 @@ h2 {
 	right: 20px;
 	width: 61px;
 	height: 61px;
+	z-index: 99;
 }
 #tekst {
 	position: relative;
