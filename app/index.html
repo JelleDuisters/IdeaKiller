@@ -338,15 +338,16 @@
 						}
 						
 						
-						/*var spelers;
+						var spelers = "";
 			
 						for ( var i = 15; i > 0; i-- ) {
 							if (window.localStorage.getItem('deelnemer'+i)){
 								
-								var spelers = spelers + '<option value="deelnemer'+i+'">' + window.localStorage.getItem('deelnemer'+i) + '</option>';
+								alert("Speler gevonden");
+								spelers = spelers + '<option value="deelnemer'+i+'">' + window.localStorage.getItem('deelnemer'+i) + '</option>';
 							}
 							
-						}*/
+						}
 						
 						$("#game").after('<div id="popup"><h3>Wie was het?</h3><select id="dropdownspelers" name="dropdownspelerkeuze" class="sessioninput">'+/*spelers+*/'</select></div>');
 						
