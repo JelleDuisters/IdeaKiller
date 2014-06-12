@@ -340,15 +340,15 @@
 						
 						var spelers = "";
 			
-						alert(window.localStorage.getItem('deelnemer1'));
+						//alert(window.localStorage.getItem('deelnemer1'));
 						
-						/*for ( var i = 15; i > 0; i-- ) {
+						for ( var i = 15; i < 0; i++ ) {
 							if (window.localStorage.getItem('deelnemer'+i)){
 								
 								alert("Speler gevonden");
-								spelers = spelers + '<option value="deelnemer'+i+'">' + window.localStorage.getItem('deelnemer'+i) + '</option>';
+								//spelers = spelers + '<option value="deelnemer'+i+'">' + window.localStorage.getItem('deelnemer'+i) + '</option>';
 							}
-						}*/
+						}
 						
 						$("#game").after('<div id="popup"><h3>Wie was het?</h3><select id="dropdownspelers" name="dropdownspelerkeuze" class="sessioninput">'+/*spelers+*/'</select></div>');
 						
