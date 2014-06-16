@@ -53,3 +53,43 @@ var app = {
 };
 
 
+	$(document).ready(function() {
+		// The watch id references the current `watchAcceleration`
+		var watchID = null;
+		$('#startpage').hide();
+		
+		
+		$('.addtouch').bind('touchstart touchend', function(e) {
+			e.preventDefault();
+			$(this).toggleClass('active');
+		});
+		
+		
+		$("#btn-card").bind('touchstart', function(e) {
+			loadText('card'); 
+		});
+		
+		// Set button actions
+		$("#btn-stats").bind('touchstart', function(e) {
+			loadText('stats');
+		});
+		
+		// Set button actions
+		$("#btn-rules").bind('touchstart', function(e) {
+			loadText('rules');
+		});
+		
+		$("#btn-info").bind('touchstart', function(e) {
+			loadText('info');
+		});
+
+		
+		$("#header .btnBack").bind('touchstart', function(e) {
+			goBack();
+		});
+
+		$('#header .btnBack').css("display", "none");
+		
+		loaded();
+
+	});
