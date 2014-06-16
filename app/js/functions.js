@@ -692,6 +692,23 @@
 				watchID = null;
 			}
 		}
+		
+		// Play audio
+		function playAudio(src) {
+			if (my_media == null) {
+				// Create Media object from src
+				my_media = new Media(src, onSuccess, onError);
+			} // else play current audio
+			// Play audio
+			my_media.play();
+	  
+		}
+		
+		function stopAudio() {
+			if (my_media) {
+				my_media.stop();
+			}
+		}
 
 		function onSuccess(acceleration) {
 			var element = document.getElementById('accelerometer');
@@ -796,19 +813,4 @@
 		}
 	}
 	
-	// Play audio
-	function playAudio(src) {
-		if (my_media == null) {
-			// Create Media object from src
-			my_media = new Media(src, onSuccess, onError);
-		} // else play current audio
-		// Play audio
-		my_media.play();
-
-	}
 	
-	function stopAudio() {
-		if (my_media) {
-			my_media.stop();
-		}
-	}

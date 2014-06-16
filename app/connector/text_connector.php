@@ -44,6 +44,7 @@
     </form>
  <script>
  	
+		//Kijkt of er een speler is opgeslagen, zo ja, haalt hij alle spelers op en stopt ze in de form, anders maakt hij de drie standaard opties.
 		if (window.localStorage.getItem('deelnemer2') == null) {
 			
 				$("#sessionname").after('<input class="sessioninput speler" placeholder="Speler 1" type="text" required="required" id="spelernaam1" name="deelnemer1"><input class="sessioninput speler" placeholder="Speler 2" type="text" required="required" id="spelernaam2" name="deelnemer2"><input class="sessioninput speler" placeholder="Speler 3" type="text" required="required" id="spelernaam3" name="deelnemer3">');
