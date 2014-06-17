@@ -88,11 +88,11 @@
 
 <?php
 		
-	} else if($_POST['page'] == "stat"){
+	} else if($_POST['page'] == "stats"){
 		
 ?>
 
-<h1>Stat</h1>
+<h1>Stats</h1>
 
 <?php
 		
