@@ -59,12 +59,12 @@ var app = {
 		$('#startpage').hide();
 		
 		
-		$('.addtouch').bind('touchstart touchend', function(e) {
+		/*$('.addtouch').bind('touchstart touchend', function(e) {
 			e.preventDefault();
 			$(this).toggleClass('active');
-		});
+		});*/
 		
-		
+		// Set button actions
 		$("#btn-card").bind('touchstart', function(e) {
 			loadText('card'); 
 		});

@@ -712,14 +712,7 @@
 
 		function onSuccess(acceleration) {
 			var element = document.getElementById('accelerometer');
-			/*element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
-								'Acceleration Y: ' + acceleration.y         + '<br />' +
-								'Acceleration Z: ' + acceleration.z         + '<br />' +
-								'Timestamp: '      + acceleration.timestamp + '<br />';*/
-
-
-
-
+			
 			if(acceleration.y > 7){
 				if (i == 1){
 					//playAudio("http://www.soundjay.com/mechanical/gun-gunshot-01.mp3");
