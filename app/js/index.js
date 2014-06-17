@@ -58,12 +58,6 @@ var app = {
 		var watchID = null;
 		$('#startpage').hide();
 		
-		
-		/*$('.addtouch').bind('touchstart touchend', function(e) {
-			e.preventDefault();
-			$(this).toggleClass('active');
-		});*/
-		
 		// Set button actions
 		$("#btn-card").bind('touchstart', function(e) {
 			loadText('card'); 
@@ -71,7 +65,7 @@ var app = {
 		
 		// Set button actions
 		$("#btn-stats").bind('touchstart', function(e) {
-			loadText('stats');
+			loadText('rules');
 		});
 		
 		// Set button actions
