@@ -65,7 +65,7 @@ var app = {
 		
 		// Set button actions
 		$("#btn-stats").bind('touchstart', function(e) {
-			loadText('rules');
+			loadText('stats');
 		});
 		
 		// Set button actions

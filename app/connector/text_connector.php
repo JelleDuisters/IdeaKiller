@@ -88,6 +88,14 @@
 
 <?php
 		
+	} else if($_POST['page'] == "stat"){
+		
+?>
+
+<h1>Stat</h1>
+
+<?php
+		
 	} else if($_POST['page'] == "info"){
 		
 ?>
@@ -120,37 +128,37 @@
 	<h1>De 10 vuistregels</h1>
 <div class="tekst">
 		<h2>Observeren</h2>
-        Creatief denken valt te leren. Niet zozeer door er talloze studieboeken   op na te slaan, maar eerder door enkele randvoorwaarden te scheppen en   de geest vooral veel ruimte te bieden. Zo doen kunstenaars dat. Heb je   weinig vertrouwen in jouw natuurlijke creatieve vermogen, dan kun je ook   op kunstmatige wijze creativiteit uitlokken. Hoe? Door te kijken hoe   beroemde geniën dat doen en deden. Hieronder vind je enkele vuistregels.<br />
+        Creatief denken valt te leren. Niet zozeer door er talloze studieboeken op na te slaan, maar eerder door enkele randvoorwaarden te scheppen en de geest vooral veel ruimte te bieden. Zo doen kunstenaars dat. Heb je weinig vertrouwen in jouw natuurlijke creatieve vermogen, dan kun je ook op kunstmatige wijze creativiteit uitlokken. Hoe? Door te kijken hoe beroemde geniën dat doen en deden. Hieronder vind je enkele vuistregels.<br />
         <br />
         <h2>Vooroordeel</h2>
-        Denken dat je niet creatief bent is een vooroordeel. Creatief denken is   gewoon een onderdeel van het denkvermogen, naast andere, bekendere   vaardigheden als analyseren, kritiseren en memoriseren. Echt iedereen   kan het! Wel moet je het, net als alle vaardigheden, stimuleren en   ontwikkelen. Dat is precies wat uitvinders en andere originele geesten   doen en waardoor zij opvallen. Of je creativiteit met een kleine of een   grote C schrijft hangt af van de mate van ontwikkeling.<br />
+        Denken dat je niet creatief bent is een vooroordeel. Creatief denken is gewoon een onderdeel van het denkvermogen, naast andere, bekendere vaardigheden als analyseren, kritiseren en memoriseren. Echt iedereen kan het! Wel moet je het, net als alle vaardigheden, stimuleren en ontwikkelen. Dat is precies wat uitvinders en andere originele geesten doen en waardoor zij opvallen. Of je creativiteit met een kleine of een grote C schrijft hangt af van de mate van ontwikkeling.<br />
         <br />
         <h2>Luchtledig</h2>
-        Out of the blue origineel zijn is praktisch onmogelijk. Iedereen begint   wel ergens te broeden, heeft een probleem dat hij moet oplossen, een   plan dat zij wil ontwerpen, een vernieuwing die hij wil doorvoeren. En   daar begint het ook: elk creatief proces wortelt in het voorbereidende   werk. Eerst verzamel je gegevens, checkt de stand van zaken, verzamelt   reeds bedachte of uitgewerkte oplossingen…<br />
+        Out of the blue origineel zijn is praktisch onmogelijk. Iedereen begint wel ergens te broeden, heeft een probleem dat hij moet oplossen, een plan dat zij wil ontwerpen, een vernieuwing die hij wil doorvoeren. En daar begint het ook: elk creatief proces wortelt in het voorbereidende werk. Eerst verzamel je gegevens, checkt de stand van zaken, verzamelt reeds bedachte of uitgewerkte oplossingen…<br />
         <br />
         <h2>Kritiekloos</h2>
-        Belangrijk is vooral dat je jezelf alle ruimte laat bij dit   voorbereidende werk. Spui maar ideeën. Zonder ze meteen weer in de kiem   te smoren, omdat ze niet haalbaar of betaalbaar zouden zijn, niet   geschikt, niet waar, niet origineel… In deze fase is dat allemaal   onbelangrijk. Wat wel belangrijk is, is te spelen met je gedachten.<br />
+        Belangrijk is vooral dat je jezelf alle ruimte laat bij dit voorbereidende werk. Spui maar ideeën. Zonder ze meteen weer in de kiem te smoren, omdat ze niet haalbaar of betaalbaar zouden zijn, niet   geschikt, niet waar, niet origineel… In deze fase is dat allemaal onbelangrijk. Wat wel belangrijk is, is te spelen met je gedachten.<br />
         <br />
         <h2>Alternatieven</h2>
-        Denk niet te snel dat je eruit bent, dat je de oplossing al gevonden   hebt en niet verder hoeft na te denken. Dat is niet zo! Zoek zoveel   mogelijk alternatieve oplossingen. Waarom? Omdat er vaak veel betere   oplossingen bijzitten dan de eerste waarmee je al tevreden was. Omdat je   er misschien achter komt dat jouw oplossing bij nader inzien toch niet   zo origineel was als je dacht. Omdat je, nu je toch eenmaal in de   ideeën-spui-fase zit, beter kunt profiteren van die flow, in plaats van   later het proces van voren af aan te moeten opstarten.<br />
+        Denk niet te snel dat je eruit bent, dat je de oplossing al gevonden hebt en niet verder hoeft na te denken. Dat is niet zo! Zoek zoveel mogelijk alternatieve oplossingen. Waarom? Omdat er vaak veel betere   oplossingen bijzitten dan de eerste waarmee je al tevreden was. Omdat je er misschien achter komt dat jouw oplossing bij nader inzien toch niet zo origineel was als je dacht. Omdat je, nu je toch eenmaal in de   ideeën-spui-fase zit, beter kunt profiteren van die flow, in plaats van later het proces van voren af aan te moeten opstarten.<br />
         <br />
         <h2>Incubatietijd</h2>
-        Zijn je ideeën uitgeput, laat ze dan rusten, leg ze opzij, ga iets   anders doen. Neem een pauze, sla een balletje, maak een ommetje, slaap   er een nachtje over en laat intussen je onderbewuste het proces afmaken.   Het heeft tijd nodig. Creativiteit laat zich niet opjutten.   Incubatietijd is een essentieel onderdeel van het proces. Het zal de   kwaliteit van de ideeën alleen maar ten goede komen.<br />
+        Zijn je ideeën uitgeput, laat ze dan rusten, leg ze opzij, ga iets anders doen. Neem een pauze, sla een balletje, maak een ommetje, slaap   er een nachtje over en laat intussen je onderbewuste het proces afmaken. Het heeft tijd nodig. Creativiteit laat zich niet opjutten. Incubatietijd is een essentieel onderdeel van het proces. Het zal de   kwaliteit van de ideeën alleen maar ten goede komen.<br />
         <br />
         <h2>Doe er iets mee!</h2>
-        Zoals gezegd zullen niet alle ideeën bruikbaar blijken. Je moet ze dus   evalueren en selecteren. Welke kun je implementeren (toepassen) en welke   moet je afvoeren?<br />
+        Zoals gezegd zullen niet alle ideeën bruikbaar blijken. Je moet ze dus evalueren en selecteren. Welke kun je implementeren (toepassen) en welke moet je afvoeren?<br />
         <br />
         <h2>Balans</h2>
-        Creatief denken doe je binnen een structuur, welke past jou het beste?   Je zult zelf de balans moeten vinden tussen maximale vrijheid (chaos) en   strakke regels (bureaucratie). Hier zijn geen algemeen geldende regels   voor, het is voor iedereen anders.<br />
+        Creatief denken doe je binnen een structuur, welke past jou het beste? Je zult zelf de balans moeten vinden tussen maximale vrijheid (chaos) en strakke regels (bureaucratie). Hier zijn geen algemeen geldende regels   voor, het is voor iedereen anders.<br />
         <br />
         <h2>Waardering</h2>
-        Als een idee er eenmaal is lijkt het zo logisch (en hoe logischer hoe   beter het idee) dat gemakkelijk vergeten wordt hoeveel inspanning eraan   vooraf ging. Dat geldt zowel voor jezelf als voor je omgeving, je   opdrachtgever. Dan wordt al snel gedacht dat de oplossing er zonder die   inspanning ook wel gekomen was en men heeft de neiging het creatieve   proces te bagatelliseren. Pas daarvoor op! Het is de manier om je eigen   of andermans creativiteit in de kiem te smoren, te frustreren. Wil je   creativiteit stimuleren dan is waardering, enthousiasme, onontbeerlijk!<br />
+        Als een idee er eenmaal is lijkt het zo logisch (en hoe logischer hoe beter het idee) dat gemakkelijk vergeten wordt hoeveel inspanning eraan vooraf ging. Dat geldt zowel voor jezelf als voor je omgeving, je   opdrachtgever. Dan wordt al snel gedacht dat de oplossing er zonder die inspanning ook wel gekomen was en men heeft de neiging het creatieve proces te bagatelliseren. Pas daarvoor op! Het is de manier om je eigen   of andermans creativiteit in de kiem te smoren, te frustreren. Wil je creativiteit stimuleren dan is waardering, enthousiasme, onontbeerlijk!<br />
         <br />
         <h2>Verantwoordelijkheid </h2>
-        Als je samen met anderen een probleem wilt oplossen, met elkaar iets   nieuws wilt opzetten, gezamelijk iets wilt ontwerpen, deel dan ook de   verantwoordelijkheid met zoveel mogelijk mensen. Niet alleen met hen die   direct bij het probleem betrokken zijn, maar ook met degenen die er   slechts zijdelings mee te maken hebben. Vooral die laatste groep kan je   verrassen door een frisse blik, een andere invalshoek, specifieke   kennis. Door hen aan te spreken en aan te sporen om mee te denken, raken   ze gemotiveerd en dit zal de creatieve inbreng ten goede komen.<br />
+        Als je samen met anderen een probleem wilt oplossen, met elkaar iets nieuws wilt opzetten, gezamelijk iets wilt ontwerpen, deel dan ook de verantwoordelijkheid met zoveel mogelijk mensen. Niet alleen met hen die   direct bij het probleem betrokken zijn, maar ook met degenen die er slechts zijdelings mee te maken hebben. Vooral die laatste groep kan je verrassen door een frisse blik, een andere invalshoek, specifieke   kennis. Door hen aan te spreken en aan te sporen om mee te denken, raken ze gemotiveerd en dit zal de creatieve inbreng ten goede komen.<br />
         <br />
         <h2>Bedrijfsmatig</h2>
-        Wil je binnen je bedrijf creativiteit stimuleren, weet dan dat je meer   hebt aan een geleidelijke toename van creativiteit dan aan occasionele   hoogvliegers. Dit kun je realiseren door nieuwe werknemers te screenen   op creatieve vaardigheden en door trainingen te organiseren. De   trainingen verschaffen inzicht in creativiteit en creatief denken en   bieden technieken om je daarin te oefenen. Dat heeft echter alleen zin   als de werknemers de geleerde technieken ook in de praktijk kunnen   brengen, individueel zowel als in een groep, en over langere perioden.   Zo ontstaat er vertrouwen in de eigen creatieve vermogens wat weer zal   leiden tot een algemene verhoging van ieders creativiteit!
+        Wil je binnen je bedrijf creativiteit stimuleren, weet dan dat je meer hebt aan een geleidelijke toename van creativiteit dan aan occasionele   hoogvliegers. Dit kun je realiseren door nieuwe werknemers te screenen op creatieve vaardigheden en door trainingen te organiseren. De trainingen verschaffen inzicht in creativiteit en creatief denken en bieden technieken om je daarin te oefenen. Dat heeft echter alleen zin als de werknemers de geleerde technieken ook in de praktijk kunnen brengen, individueel zowel als in een groep, en over langere perioden. Zo ontstaat er vertrouwen in de eigen creatieve vermogens wat weer zal leiden tot een algemene verhoging van ieders creativiteit!
 </div>
 <?php
 
