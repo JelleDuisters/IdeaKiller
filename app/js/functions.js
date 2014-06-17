@@ -13,7 +13,7 @@
 	var connection = true;
 	
 	// Online
-	var domain = "http://www.nettt.nl/klanten/sjra/test/connector/";
+	var domain = "connector/";
 	
 	//domain = "http://www.kernarchitecten.com/connector/";
 	
@@ -25,11 +25,12 @@
 		
 	}
 	
+	
 	function setScroll(clip){
 
-		/*if(myScroll[clip] == null){
+		if(myScroll[clip] == null){
 		
-			myScroll[clip] = new iScroll(clip + '-wrapper', { hScrollbar: false, click: true, vScrollbar: true, bounce: false });
+			myScroll[clip] = new iScroll(clip + '-wrapper', { hScrollbar: false, vScrollbar: true, bounce: false });
 			
 		} else if(clip != "news" && clip != "project") {
 			
@@ -55,7 +56,6 @@
 				vScrollbar: false,
 				vScroll:false, 
 				bounce:false,
-				click: true, 
 				onScrollEnd: function () { 
 
 					$('#nav-'+ clip +' .indicator > span.active').removeClass('active');
@@ -74,7 +74,7 @@
 			}, 100);
 		
 		
-		}*/
+		}
 
 	}
 			
@@ -588,229 +588,36 @@
 	}
 	
 	
-	// Wis alle data en reload de pagina
-	function wis(){
-		localStorage.clear();
-		window.location.reload();
-	}
-	
-	//Voeg speler toe aan en maak extra veld met nieuwe naam en nummer:
-	function voegspelertoe(){
-					
-		var nummer = $('.speler').length + 1;
-		
-		
-		$( "#verwijderspeler" + $('.speler').length ).after( '<input class="sessioninput speler" placeholder="Speler '+nummer+'" type="text" required="required" id="spelernaam' + nummer + '" name="deelnemer'+nummer+'"><input type="button" id="verwijderspeler'+nummer+'" value="x" class="verwijderknop" onclick="verwijderspeler(deelnemer'+nummer+')" />' );
-		
-	}
-	
-	function verwijderspeler(speler) {
-		
-		localStorage.removeItem(speler);
-		window.location.reload();
-			
-	}
-	
-	// Voor elke variablele in het form opslaan aan de hand van de name:
-	function storeForm() {
-		
-		$( ".sessioninput" ).each(function( index ) {
-			
-			window.localStorage.setItem($(this).attr("name"), $(this).val());
-			
+	$(document).ready(function() {
+
+		//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+		$("#btn-card").click(function(){
+			loadText('card'); 
 		});
 		
+		// Set button actions
+		$("#btn-stats").click(function(){
+			loadText('stats');
+			alert('stats klik');
+		});
 		
-		startSession()
-	}
-	
-	//Stop luisteren naar de accelerometer en ga terug naar de beginpagina:
-	function gotoHome(){
-		$('#session').hide();
-		$('#container').show();
-		//stop listening to accelerometer
-		navigator.accelerometer.clearWatch(watchID);
-	};
-	
-	//Strobe effect functie:
-	function strobe(object){
-		$(object).stop().fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50).fadeToggle(20).delay(50);
+		// Set button actions
+		$("#btn-rules").click(function(){
+			loadText('rules');
+		});
 		
-	}
-	
-	//Start luisteren naar de accelerometer en start sessie
-	function startSession(){	
-		
-		$('#container').hide();
-		$('#session').show();
-		
-
-		var count = 0;
-		// Audio player
-		var my_media = null;
+		$("#btn-info").click(function(){
+			loadText('info');
+		});
 
 		
+		$("#header .btnBack").click(function(){
+			goBack();
+		});
 
-		// onSuccess Callback
-		//
-		function onSuccess() {
-			console.log("playAudio():Audio Success");
-		}
-
-		// onError Callback
-		//
-		function onError(error) {
-			alert('code: '    + error.code    + '\n' +
-				  'message: ' + error.message + '\n');
-		}
-
-		// Wait for device API libraries to load
-		//
-		document.addEventListener("deviceready", onDeviceReady, false);
-
-		// device APIs are available
-		//
-		function onDeviceReady() {
-			startWatch();
-		}
-
-		// Start watching the acceleration
-		//
-		function startWatch() {
-
-			// Update acceleration every x seconds
-			var options = { frequency: 100 };
-
-			watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-		}
-
-		// Stop watching the acceleration
-		//
-		function stopWatch() {
-			if (watchID) {
-				navigator.accelerometer.clearWatch(watchID);
-				watchID = null;
-			}
-		}
+		$('#header .btnBack').css("display", "none");
 		
-		// Play audio
-		function playAudio(src) {
-			if (my_media == null) {
-				// Create Media object from src
-				my_media = new Media(src, onSuccess, onError);
-			} // else play current audio
-			// Play audio
-			my_media.play();
-	  
-		}
-		
-		function stopAudio() {
-			if (my_media) {
-				my_media.stop();
-			}
-		}
+		loaded();
 
-		function onSuccess(acceleration) {
-			var element = document.getElementById('accelerometer');
-			/*element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
-								'Acceleration Y: ' + acceleration.y         + '<br />' +
-								'Acceleration Z: ' + acceleration.z         + '<br />' +
-								'Timestamp: '      + acceleration.timestamp + '<br />';*/
-
-
-
-
-			if(acceleration.y > 7){
-				if (i == 1){
-					//playAudio("http://www.soundjay.com/mechanical/gun-gunshot-01.mp3");
-					playAudio("/android_asset/www/audio/"+$('#dropdown').val()+".mp3");
-					count ++;
-					
-					strobe('#session');
-					
-					//color the card
-					var color = $("#styleDropdown").val().toString();
-					
-					
-					if (color.indexOf("url") > -1){
-						// add back image
-						$('#session').css('background', color);
-					}else if (color == 'red' || color == 'black'){
-						// add color
-						$('#session').css('background', color);
-						
-						// add tekst
-						if ($('#tekst').val() == ""){
-							$('#accelerometer').html("<h1 id='cardText'>Idea Killer</h1><h2 id='count'>"+count.toString()+"</h2>");
-						}else {
-							$('#accelerometer').html("<h1 id='cardText'>"+$('#tekst').val()+"</h1><h2 id='count'>"+count.toString()+"</h2>");
-						}
-					}else {
-						// add color
-						$('#session').css('background', 'red');
-						
-						// add tekst
-						if ($('#tekst').val() == ""){
-							$('#accelerometer').html("<h1 id='cardText'>Idea Killer</h1><h2 id='count'>"+count.toString()+"</h2>");
-						}else {
-							$('#accelerometer').html("<h1 id='cardText'>"+$('#tekst').val()+"</h1><h2 id='count'>"+count.toString()+"</h2>");
-						}
-					}
-					
-					
-					var spelers = "";
-		
-					
-					for (var p = 0; p < 20; p++) {
-						if (window.localStorage.getItem('deelnemer'+p)){
-							
-							spelers = spelers + '<option value="deelnemer'+p+'">' + window.localStorage.getItem('deelnemer'+p) + '</option>';
-						}
-					}
-					
-					
-					setTimeout(function() {
-						$("#game").after('<div id="popup"><h3>Wie was het?</h3><select id="dropdownspelers" name="dropdownspelerkeuze" class="sessioninput">'+spelers+'</select></div>');
-						
-						$( "#dropdownspelers" ).change(function() {
-							
-							if (window.localStorage.getItem($(this).val())){
-								var schuld = window.localStorage.getItem($(this).val());
-							}else {
-								var schuld = 0;
-							}
-							
-							window.localStorage.setItem($(this).val()+"schuld", schuld+1);
-							
-							$("#popup").remove();
-							
-							alert ('Aantal schuld '+ $(this).val()+ ": " + window.localStorage.getItem($(this).val()));
-						});
-					}, 1000);
-					
-					
-					
-
-
-					
-				}
-				i = 2;
-			}else {
-				i = 1;
-				$('#session').stop().fadeIn().css('background','green');
-				$('#accelerometer').html("<h2 id='count'>"+count+"</h2>");
-				//stopAudio();
-				$('#tekst').show();
-			}
-
-		}
-
-
-		// onError: Failed to get the acceleration
-		//
-		function onError() {
-			alert('onError!');
-		}
-	}
-	
-	
+	});

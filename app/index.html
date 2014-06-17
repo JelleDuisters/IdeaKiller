@@ -1,169 +1,166 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-       <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
-       		
-		
-		<script type="text/javascript" src="js/jQuery-2.2.0.min.js"></script>
+<head>
 
-       	<link rel="stylesheet" href="css/style.css" type="text/css" />
-        
-        <script type="text/javascript" src="js/iscroll.js"></script>
-        <script type="application/javascript" src="js/functions.js"></script>
-        
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        
-        <title>Idea Killer</title>        
-    </head>
-    <body>
-   		<!--<iframe id="frame" style="z-index: 2;" src="http://www.nettt.nl/klanten/sjra/test/" height="100%" width="100%" frameborder="0"></iframe>-->
-        <div id="container"> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+    <title>Sjra Puts | Mobile</title>
+    
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0;"/> 
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    
+    <link rel="apple-touch-icon" href="images/icon.png" />
+    <link rel="stylesheet" href="style/style.css" type="text/css" />
+
+	<script type="text/javascript" src="js/jquery.1.7.1.js"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD9Tx82-DqfEXybWaZHqKinYRdsSO3D-VY&amp;sensor=true"></script>    
+   	<script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript" src="js/infobox.js"></script>
+    <script type="application/javascript" src="js/functions.js"></script>
+    
+</head>
+<body>
+
+  <div id="container"> 
   
-            <div id="header">
-              <div class="btnBack"><a href="#">&laquo;</a></div>
-              <div id="logo">iDea Killer</div>
+    <div id="header">
+      <div class="btnBack"><a href="#">&laquo;</a></div>
+      <div id="logo">iDea Killer</div>
+    </div>
+   
+    <div id="status">
+      <div id="loading">
+        <h1>Laden</h1>
+        een moment geduld a.u.b.
+      </div>
+    </div>
+    
+    <!-- CONTENT -->
+    <div id="content">
+    
+      <!-- card -->
+      <div class="panel" id="card">
+        <div id="card-wrapper" class="wrapper">
+          <div id="card-scroller" class="scroller">
+            <div class="data">
+
             </div>
-           
-            <div id="status">
-              <div id="loading">
-                <h1>Laden</h1>
-                een moment geduld a.u.b.
-              </div>
-            </div>
-            
-            <!-- CONTENT -->
-            <div id="content">
-            
-              <!-- card -->
-              <div class="panel" id="card">
-                <div id="card-wrapper" class="wrapper">
-                  <div id="card-scroller" class="scroller">
-                    <div class="data">
-        
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-               <!-- card detail -->
-              <div class="panel" id="card-detail">
-                <div id="card-detail-wrapper" class="wrapper">
-                  <div id="card-detail-scroller" class="scroller">
-                    <div class="data">
-        
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- stats -->
-              <div class="panel" id="stats">
-                <div id="stats-wrapper" class="wrapper">
-                  <div id="stats-scroller" class="scroller">
-                    <div class="data">
-        
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-               <!-- stats detail -->
-              <div class="panel" id="stats-detail">
-                <div id="stats-detail-wrapper" class="wrapper">
-                  <div id="stats-detail-scroller" class="scroller">
-                    <div class="data">
-        
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- rules -->
-              <div class="panel" id="rules">
-                <div id="rules-wrapper" class="wrapper">
-                  <div id="rules-scroller" class="scroller">
-                    <div class="data">
-        
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-               <!-- rules detail -->
-              <div class="panel" id="rules-detail">
-                <div id="rules-detail-wrapper" class="wrapper">
-                  <div id="rules-detail-scroller" class="scroller">
-                    <div class="data">
-        
-                    </div>
-                  </div>
-                </div>
-              </div>
-            
-              <!-- info -->
-              <div class="panel" id="info">
-                <div id="info-wrapper" class="wrapper">
-                  <div id="info-scroller" class="scroller">
-                    <div class="data">
-        
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-               <!-- info detail -->
-              <div class="panel" id="info-detail">
-                <div id="info-detail-wrapper" class="wrapper">
-                  <div id="info-detail-scroller" class="scroller">
-                    <div class="data">
-        
-                    </div>
-                  </div>
-                </div>
-              </div>
-             
-        
-            </div>
-            
-            <div id="footer">
-              <ul>
-                <li class="addtouch"><a href="#" class="btn" id="btn-card"><img src="img/icons/icon_card.png" alt=""><br>Card</a></li>
-                <li class="addtouch"><a href="#" class="btn" id="btn-stats"><img src="img/icons/icon_stat.png" alt=""><br>Stats</a></li>
-                <li class="addtouch"><a href="#" class="btn" id="btn-rules"><img src="img/icons/icon_note.png" alt=""><br>Rules</a></li>
-                <li class="addtouch"><a href="#" class="btn" id="btn-info"><img src="img/icons/icon_info.png" alt=""><br>Info</a></li>
-              </ul>
-            </div>
-            
           </div>
-        <div class="page" id="session">
-            <div id="game">
-                
-                <div id="accelerometer"><h2 id="count">Waiting for accelerometer...</h2></div>
-                <input type="button" id="stop" onClick="gotoHome()"/>
-            </div>
         </div>
-    </body>
+      </div>
+      
+       <!-- card detail -->
+      <div class="panel" id="card-detail">
+        <div id="card-detail-wrapper" class="wrapper">
+          <div id="card-detail-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- stats -->
+      <div class="panel" id="stats">
+        <div id="stats-wrapper" class="wrapper">
+          <div id="stats-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+       <!-- stats detail -->
+      <div class="panel" id="stats-detail">
+        <div id="stats-detail-wrapper" class="wrapper">
+          <div id="stats-detail-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- rules -->
+      <div class="panel" id="rules">
+        <div id="rules-wrapper" class="wrapper">
+          <div id="rules-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+       <!-- rules detail -->
+      <div class="panel" id="rules-detail">
+        <div id="rules-detail-wrapper" class="wrapper">
+          <div id="rules-detail-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- info -->
+      <div class="panel" id="info">
+        <div id="info-wrapper" class="wrapper">
+          <div id="info-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+       <!-- info detail -->
+      <div class="panel" id="info-detail">
+        <div id="info-detail-wrapper" class="wrapper">
+          <div id="info-detail-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <!-- Settings -->
+      <div class="panel" id="settings">
+        <div id="settings-wrapper" class="wrapper">
+          <div id="settings-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+       <!-- Settings detail -->
+      <div class="panel" id="settings-detail">
+        <div id="settings-detail-wrapper" class="wrapper">
+          <div id="settings-detail-scroller" class="scroller">
+            <div class="data">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <div id="footer">
+      <ul>
+        <li><a href="#" class="btn" id="btn-card"><img src="images/icons/icon_card.png" alt=""><br>Card</a></li>
+        <li><a href="#" class="btn" id="btn-stats"><img src="images/icons/icon_stat.png" alt=""><br>Stats</a></li>
+        <li><a href="#" class="btn" id="btn-rules"><img src="images/icons/icon_note.png" alt=""><br>Rules</a></li>
+        <li><a href="#" class="btn" id="btn-info"><img src="images/icons/icon_info.png" alt=""><br>Info</a></li>
+        <li><a href="#" class="btn" id="btn-settings"><img src="images/icons/icon_setting.png" alt=""><br>Settings</a></li>
+      </ul>
+    </div>
+    
+  </div>
+</body>
 </html>

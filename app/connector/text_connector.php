@@ -12,11 +12,10 @@
 
 	<h1><?php echo ucfirst($_POST['page']); ?></h1>
     <form action="#" method="post">
-        <input class="sessioninput" placeholder="Session naam" required="required" type="text" id="sessionname" name="sessionname">
-        <!--<input class="sessioninput speler" placeholder="Speler 1" type="text" required="required" id="spelernaam1" name="deelnemer1">
-        <input class="sessioninput speler" placeholder="Speler 2" type="text" required="required" id="spelernaam2" name="deelnemer2">
-        <input class="sessioninput speler" placeholder="Speler 3" type="text" required="required" id="spelernaam3" name="deelnemer3">-->
-        <input type="button" id="extraspeler" value="+" onclick="voegspelertoe();" />
+        <input class="sessioninput" placeholder="Session naam" required="required" type="text" name="sessionname">
+        <input class="sessioninput" placeholder="Speler 1" type="text" required="required"  name="Deelnemer 1">
+        <input class="sessioninput" placeholder="Speler 2" type="text" required="required"  name="Deelnemer 2">
+        <input class="sessioninput" placeholder="Speler 3" type="text" required="required"  name="Deelnemer 3">
         
         <h2>Kaart stijl: </h2>
         <select id="styleDropdown" class="sessioninput">
@@ -26,7 +25,7 @@
         </select>
         
         <h2>Geluid: </h2>
-        <select id="dropdown" name="dropdownsound" class="sessioninput">
+        <select id="dropdown" class="sessioninput">
           	<option value="Pistool">Pistool</option>
           	<option value="Sirene">Sirene</option>
           	<option value="Stop it">Stop it!</option>
@@ -36,41 +35,18 @@
         </select>
         
         <h2>Tekst op kaart: </h2>
-        <input class="sessioninput" name="kaarttekst" type='text' id='tekst' placeholder='Idea Killer'/>
-        
-        <input type="button" id="wisinstellingen" value="Wis alle instellingen" onclick="wis();" />
+        <input class="sessioninput" type='text' id='tekst' placeholder='Idea Killer'/>
         <br><br>
-        <input type="button" id="go" value="Go" onClick="storeForm();"/>
+        <input type="button" id="go" value="Go" onClick="storeForm()"/>
     </form>
  <script>
- 	
-		//Kijkt of er een speler is opgeslagen, zo ja, haalt hij alle spelers op en stopt ze in de form, anders maakt hij de drie standaard opties.
-		if (window.localStorage.getItem('deelnemer2') == null) {
-			
-				$("#sessionname").after('<input class="sessioninput speler" placeholder="Speler 1" type="text" required="required" id="spelernaam1" name="deelnemer1"><input class="sessioninput speler" placeholder="Speler 2" type="text" required="required" id="spelernaam2" name="deelnemer2"><input class="sessioninput speler" placeholder="Speler 3" type="text" required="required" id="spelernaam3" name="deelnemer3">');
-			
-		}else {
-			
-			for ( var i = 15; i > 0; i-- ) {
-				if (window.localStorage.getItem('deelnemer'+i)){
-					$( "#sessionname" ).after( '<input class="sessioninput speler" placeholder="Speler '+i+'" type="text" required="required" value="'+ window.localStorage.getItem('deelnemer'+i) +'" id="spelernaam' + i + '" name="deelnemer'+i+'"><input type="button" id="verwijderspeler'+i+'" class="verwijderknop" value="x" onclick="verwijderspeler(\'deelnemer'+i+'\')" />' );
-				}
-				
-				
-			}
-			
-		}
 		
-		//Stop opgeslagen variabelen in input velden: 
- 		$( ".sessioninput" ).each(function( index ) {
-			
-				var id = $(this).attr("id");
-				$("#"+id).val(window.localStorage.getItem($(this).attr("name")));
-				
-		});
- 		
+		if (window.localStorage.getItem("sessionname") === null){
+			$(".sessioninput").val(window.localStorage.getItem("sessionname"));
+		}else {
+		}
     </script><?php
-	} else if($_POST['page'] == "card-detail" && $_POST['id'] == "1"){
+	} else if($_POST['page'] == "stats"){
 		
 ?>
 
