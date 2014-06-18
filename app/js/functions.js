@@ -778,7 +778,7 @@
 							alert ("Schuld plus 1 is: " + schuld);
 							
 							
-							window.localStorage.setItem(spelerkey+"schuld", parseInt(schuld) + 1);
+							window.localStorage.setItem(spelerkey+"schuld", schuld);
 							
 							$("#popup").remove();
 							

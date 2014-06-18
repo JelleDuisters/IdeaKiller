@@ -98,6 +98,9 @@
 	for ( var i = 15; i > 0; i-- ) {
 		if (window.localStorage.getItem('deelnemer'+i)){
 			$( ".tekst" ).append("<h2>" + window.localStorage.getItem('deelnemer'+i) + "</h2>");
+			$( ".tekst" ).append("<p>Aantal ideas killed: " + window.localStorage.getItem('deelnemer'+i+"schuld") + "</p>");
+			
+			
 		}
 	}
 </script>
