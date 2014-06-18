@@ -709,7 +709,40 @@
 				my_media.stop();
 			}
 		}
-
+		function selecteerspeler() {
+			var spelers = "<option disabled selected>Selecteer schuldige..</option>";
+	  
+			for (var p = 20; p > 0; p--) {
+				if (window.localStorage.getItem('deelnemer'+p)){
+					
+					spelers = spelers + '<option value="deelnemer'+p+'">' + window.localStorage.getItem('deelnemer'+p) + '</option>';
+				}
+			}
+			
+			var spelerkey = '';
+			
+			$("#game").after('<div id="popup"><h3>Wie was het?</h3><select id="dropdownspelers" name="dropdownspelerkeuze" class="sessioninput">'+spelers+'</select></div>');
+			
+			$( "#dropdownspelers" ).change(function() {
+				
+				spelerkey = $("#dropdownspelers").val();
+				
+				//als de speler als schuld heeft haal die op en stop de variabele in var schuld, anders zet schuld op 0
+				if (window.localStorage.getItem(spelerkey+"schuld")){
+					var schuld = window.localStorage.getItem(spelerkey+"schuld");
+				}else {
+					var schuld = 0;
+				}
+				
+				schuld = parseInt(schuld)+1;
+				
+				window.localStorage.setItem(spelerkey+"schuld", schuld);
+				
+				$("#popup").remove();
+				
+			});
+		}
+		
 		function onSuccess(acceleration) {
 			var element = document.getElementById('accelerometer');
 			
@@ -771,39 +804,4 @@
 		function onError() {
 			alert('onError!');
 		}
-	}
-	
-	
-	function selecteerspeler() {
-		var spelers = "<option disabled selected>Selecteer schuldige..</option>";
-  
-		for (var p = 20; p > 0; p--) {
-			if (window.localStorage.getItem('deelnemer'+p)){
-				
-				spelers = spelers + '<option value="deelnemer'+p+'">' + window.localStorage.getItem('deelnemer'+p) + '</option>';
-			}
-		}
-		
-		var spelerkey = '';
-		
-		$("#game").after('<div id="popup"><h3>Wie was het?</h3><select id="dropdownspelers" name="dropdownspelerkeuze" class="sessioninput">'+spelers+'</select></div>');
-		
-		$( "#dropdownspelers" ).change(function() {
-			
-			spelerkey = $("#dropdownspelers").val();
-			
-			//als de speler als schuld heeft haal die op en stop de variabele in var schuld, anders zet schuld op 0
-			if (window.localStorage.getItem(spelerkey+"schuld")){
-				var schuld = window.localStorage.getItem(spelerkey+"schuld");
-			}else {
-				var schuld = 0;
-			}
-			
-			schuld = parseInt(schuld)+1;
-			
-			window.localStorage.setItem(spelerkey+"schuld", schuld);
-			
-			$("#popup").remove();
-			
-		});
 	}
