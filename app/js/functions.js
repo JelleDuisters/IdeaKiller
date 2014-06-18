@@ -768,10 +768,12 @@
 						$( "#dropdownspelers" ).change(function() {
 							
 							if (window.localStorage.getItem($(this).val())){
-								var schuld = window.localStorage.getItem($(this).val());
+								var schuld = window.localStorage.getItem($(this).val()+"schuld");
 							}else {
 								var schuld = 0;
 							}
+							
+							alert (schuld);
 							
 							window.localStorage.setItem($(this).val()+"schuld", schuld+1);
 							
