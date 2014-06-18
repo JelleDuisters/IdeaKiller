@@ -751,7 +751,7 @@
 					}
 					
 					
-					var spelers = "";
+					var spelers = "<option value='kies speler'>Selecteer schuldige..</option>";
 		
 					
 					for (var p = 20; p > 0; p--) {
