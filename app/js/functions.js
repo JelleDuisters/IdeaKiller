@@ -785,15 +785,16 @@
 				}
 				i = 2;
 			}else {
-				//if (detect == 1){
-				//	detect = 0;
+				if (detect == 1){
+					detect = 0;
 					selecteerspeler()
-					i = 1;
-					$('#session').stop().fadeIn().css('background','green');
-					$('#accelerometer').html("<h2 id='count'>"+count+"</h2>");
-					//stopAudio();
-					$('#tekst').show();
-				//}
+				}
+				
+				i = 1;
+				$('#session').stop().fadeIn().css('background','green');
+				$('#accelerometer').html("<h2 id='count'>"+count+"</h2>");
+				//stopAudio();
+				$('#tekst').show();
 			}
 
 		}
