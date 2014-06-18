@@ -763,11 +763,15 @@
 					
 					
 					setTimeout(function() {
+						var spelerkey = '';
+						
 						$("#game").after('<div id="popup"><h3>Wie was het?</h3><select id="dropdownspelers" name="dropdownspelerkeuze" class="sessioninput">'+spelers+'</select></div>');
 						
 						$( "#dropdownspelers" ).change(function() {
 							
-							var spelerkey = $("#dropdownspelers").val();
+							spelerkey = $("#dropdownspelers").val();
+							
+							//als de speler als schuld heeft haal die op en stop de variabele in var schuld, anders zet schuld op 0
 							if (window.localStorage.getItem(spelerkey+"schuld")){
 								var schuld = window.localStorage.getItem(spelerkey+"schuld");
 							}else {
@@ -775,14 +779,11 @@
 							}
 							
 							schuld = parseInt(schuld)+1;
-							alert ("Schuld plus 1 is: " + schuld);
-							
 							
 							window.localStorage.setItem(spelerkey+"schuld", schuld);
 							
 							$("#popup").remove();
 							
-							alert ('Aantal schuld '+ spelerkey+ ": " + window.localStorage.getItem(spelerkey+"schuld"));
 						});
 					}, 1000);
 					
@@ -802,7 +803,6 @@
 			}
 
 		}
-
 
 		// onError: Failed to get the acceleration
 		//
