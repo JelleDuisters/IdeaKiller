@@ -56,7 +56,6 @@
 					$( "#sessionname" ).after( '<input class="sessioninput speler" placeholder="Speler '+i+'" type="text" required="required" value="'+ window.localStorage.getItem('deelnemer'+i) +'" id="spelernaam' + i + '" name="deelnemer'+i+'"><input type="button" id="verwijderspeler'+i+'" class="verwijderknop" value="x" onclick="verwijderspeler(\'deelnemer'+i+'\')" />' );
 				}
 				
-				
 			}
 			
 		}
@@ -93,6 +92,15 @@
 ?>
 
 <h1>Statistieken</h1>
+<div class="tekst"></div>
+
+<script>
+	for ( var i = 15; i > 0; i-- ) {
+		if (window.localStorage.getItem('deelnemer'+i)){
+			$( ".tekst" ).append("<h2>" + window.localStorage.getItem('deelnemer'+i) + "</h2>");
+		}
+	}
+</script>
 
 <?php
 		

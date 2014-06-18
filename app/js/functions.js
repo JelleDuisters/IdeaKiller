@@ -777,7 +777,7 @@
 							
 							$("#popup").remove();
 							
-							alert ('Aantal schuld '+ $(this).val()+ ": " + window.localStorage.getItem($(this).val()));
+							alert ('Aantal schuld '+ $(this).val()+ ": " + window.localStorage.getItem($(this).val()+"schuld"));
 						});
 					}, 1000);
 					
