@@ -773,7 +773,8 @@
 								var schuld = 0;
 							}
 							
-							alert ("Schuld plus 1 is: " + parseInt(schuld) + 1);
+							schuld = parseInt(schuld)+1;
+							alert ("Schuld plus 1 is: " + schuld);
 							
 							
 							window.localStorage.setItem($("#dropdownspelers").val()+"schuld", parseInt(schuld) + 1);
