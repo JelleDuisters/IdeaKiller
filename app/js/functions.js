@@ -644,7 +644,7 @@
 		$('#container').hide();
 		$('#session').show();
 		
-
+		var detect = 0;
 		var count = 0;
 		// Audio player
 		var my_media = null;
@@ -718,7 +718,7 @@
 					//playAudio("http://www.soundjay.com/mechanical/gun-gunshot-01.mp3");
 					playAudio("/android_asset/www/audio/"+$('#dropdown').val()+".mp3");
 					count ++;
-					
+					detect = 1;
 					strobe('#session');
 					
 					//color the card
@@ -750,56 +750,18 @@
 						}
 					}
 					
-					
-					var spelers = "<option disabled selected> -- selecteer een speler -- </option>";
-		
-					
-					for (var p = 20; p > 0; p--) {
-						if (window.localStorage.getItem('deelnemer'+p)){
-							
-							spelers = spelers + '<option value="deelnemer'+p+'">' + window.localStorage.getItem('deelnemer'+p) + '</option>';
-						}
-					}
-					
-					
-					setTimeout(function() {
-						var spelerkey = '';
-						
-						$("#game").after('<div id="popup"><h3>Wie was het?</h3><select id="dropdownspelers" name="dropdownspelerkeuze" class="sessioninput">'+spelers+'</select></div>');
-						
-						$( "#dropdownspelers" ).change(function() {
-							
-							spelerkey = $("#dropdownspelers").val();
-							
-							//als de speler als schuld heeft haal die op en stop de variabele in var schuld, anders zet schuld op 0
-							if (window.localStorage.getItem(spelerkey+"schuld")){
-								var schuld = window.localStorage.getItem(spelerkey+"schuld");
-							}else {
-								var schuld = 0;
-							}
-							
-							schuld = parseInt(schuld)+1;
-							
-							window.localStorage.setItem(spelerkey+"schuld", schuld);
-							
-							$("#popup").remove();
-							
-						});
-					}, 1000);
-					
-					
-					
-
-
-					
 				}
 				i = 2;
 			}else {
-				i = 1;
-				$('#session').stop().fadeIn().css('background','green');
-				$('#accelerometer').html("<h2 id='count'>"+count+"</h2>");
-				//stopAudio();
-				$('#tekst').show();
+				if (detect == 1){
+					detect = 0;
+					selecteerspeler()
+					i = 1;
+					$('#session').stop().fadeIn().css('background','green');
+					$('#accelerometer').html("<h2 id='count'>"+count+"</h2>");
+					//stopAudio();
+					$('#tekst').show();
+				}
 			}
 
 		}
@@ -812,3 +774,36 @@
 	}
 	
 	
+	function selecteerspeler() {
+		var spelers = "<option disabled selected>Selecteer schuldige..</option>";
+  
+		for (var p = 20; p > 0; p--) {
+			if (window.localStorage.getItem('deelnemer'+p)){
+				
+				spelers = spelers + '<option value="deelnemer'+p+'">' + window.localStorage.getItem('deelnemer'+p) + '</option>';
+			}
+		}
+		
+		var spelerkey = '';
+		
+		$("#game").after('<div id="popup"><h3>Wie was het?</h3><select id="dropdownspelers" name="dropdownspelerkeuze" class="sessioninput">'+spelers+'</select></div>');
+		
+		$( "#dropdownspelers" ).change(function() {
+			
+			spelerkey = $("#dropdownspelers").val();
+			
+			//als de speler als schuld heeft haal die op en stop de variabele in var schuld, anders zet schuld op 0
+			if (window.localStorage.getItem(spelerkey+"schuld")){
+				var schuld = window.localStorage.getItem(spelerkey+"schuld");
+			}else {
+				var schuld = 0;
+			}
+			
+			schuld = parseInt(schuld)+1;
+			
+			window.localStorage.setItem(spelerkey+"schuld", schuld);
+			
+			$("#popup").remove();
+			
+		});
+	}
