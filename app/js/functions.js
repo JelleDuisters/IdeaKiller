@@ -767,8 +767,9 @@
 						
 						$( "#dropdownspelers" ).change(function() {
 							
-							if (window.localStorage.getItem($("#dropdownspelers").val()+"schuld")){
-								var schuld = window.localStorage.getItem($("#dropdownspelers").val()+"schuld");
+							var spelerkey = $("#dropdownspelers").val();
+							if (window.localStorage.getItem(spelerkey+"schuld")){
+								var schuld = window.localStorage.getItem(spelerkey+"schuld");
 							}else {
 								var schuld = 0;
 							}
@@ -777,11 +778,11 @@
 							alert ("Schuld plus 1 is: " + schuld);
 							
 							
-							window.localStorage.setItem($("#dropdownspelers").val()+"schuld", parseInt(schuld) + 1);
+							window.localStorage.setItem(spelerkey+"schuld", parseInt(schuld) + 1);
 							
 							$("#popup").remove();
 							
-							alert ('Aantal schuld '+ $("#dropdownspelers").val()+ ": " + window.localStorage.getItem($("#dropdownspelers").val()+"schuld"));
+							alert ('Aantal schuld '+ spelerkey+ ": " + window.localStorage.getItem(spelerkey+"schuld"));
 						});
 					}, 1000);
 					
