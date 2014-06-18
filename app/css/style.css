@@ -153,6 +153,10 @@ body{
 #popup h3 {
 	margin-bottom: 20px;
 	color: white;
+	font-size:12px;
+}
+#popup select {
+	font-size:12px;
 }
 
 .wrapper {
