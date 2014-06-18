@@ -767,19 +767,19 @@
 						
 						$( "#dropdownspelers" ).change(function() {
 							
-							if (window.localStorage.getItem($(this).val())){
-								var schuld = window.localStorage.getItem($(this).val()+"schuld");
+							if (window.localStorage.getItem($("#dropdownspelers").val()+"schuld")){
+								var schuld = window.localStorage.getItem($("#dropdownspelers").val()+"schuld");
 							}else {
 								var schuld = 0;
 							}
 							
 							alert (schuld);
 							
-							window.localStorage.setItem($(this).val()+"schuld", schuld+1);
+							window.localStorage.setItem($("#dropdownspelers").val()+"schuld", parseInt(schuld) + 1);
 							
 							$("#popup").remove();
 							
-							alert ('Aantal schuld '+ $(this).val()+ ": " + window.localStorage.getItem($(this).val()+"schuld"));
+							alert ('Aantal schuld '+ $("#dropdownspelers").val()+ ": " + window.localStorage.getItem($("#dropdownspelers").val()+"schuld"));
 						});
 					}, 1000);
 					
