@@ -43,6 +43,7 @@
         <input type="button" id="go" value="Go" onClick="storeForm();"/>
     </form>
  <script>
+
 		//Kijkt of er een speler is opgeslagen, zo ja, haalt hij alle spelers op en stopt ze in de form, anders maakt hij de drie standaard opties.
 		if (window.localStorage.getItem('deelnemer2') == null) {
 			
@@ -94,12 +95,10 @@
 <div class="tekst"></div>
 
 <script>
-	for ( var i = 15; i > 0; i-- ) {
+	for ( var i = 0; i < 15; i++ ) {
 		if (window.localStorage.getItem('deelnemer'+i)){
 			$( ".tekst" ).append("<h2>" + window.localStorage.getItem('deelnemer'+i) + "</h2>");
 			$( ".tekst" ).append("<p>Aantal ideas killed: " + window.localStorage.getItem('deelnemer'+i+"schuld") + "</p>");
-			
-			
 		}
 	}
 </script>

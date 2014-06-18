@@ -754,7 +754,7 @@
 					var spelers = "";
 		
 					
-					for (var p = 0; p < 20; p++) {
+					for (var p = 20; p > 0; p--) {
 						if (window.localStorage.getItem('deelnemer'+p)){
 							
 							spelers = spelers + '<option value="deelnemer'+p+'">' + window.localStorage.getItem('deelnemer'+p) + '</option>';
