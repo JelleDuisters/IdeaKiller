@@ -92,31 +92,68 @@
 ?>
 
 <h1>Statistieken</h1>
-<div class="tekst"><div id="chart_div"></div></div>
+<div class="tekst"><canvas id="myChart" width="400" height="400"></canvas></div>
 
 <script>
+
 	for ( var i = 0; i < 15; i++ ) {
 		if (window.localStorage.getItem('deelnemer'+i)){
-			$( ".tekst" ).append("<h2>" + window.localStorage.getItem('deelnemer'+i) + "</h2>");
+			$( ".tekst" ).append("<h3>Aantal ideas killed: " +  window.localStorage.getItem('deelnemer'+i) + "</h3>");
 			$( ".tekst" ).append("<p>Aantal ideas killed: " + window.localStorage.getItem('deelnemer'+i+"schuld") + "</p>");
 		}
 	}
+	var personen;
+	var schulden;
+	for ( var k = 0; k < 15; k++ ) {
+		if (window.localStorage.getItem('deelnemer'+k)){
+			
+			personen = personen + window.localStorage.getItem('deelnemer'+k)+',';
+			
+			var huidigeschuld =  window.localStorage.getItem('deelnemer'+k+"schuld");
+			
+			if(huidigeschuld == null){
+				huidigeschuld = 0;
+			}
+			
+			schulden = schulden + huidigeschuld+',';
+		}
+	}
+	
+	var ctx = $("#myChart").get(0).getContext("2d");
+	//This will get the first returned node in the jQuery collection.
+	var myNewChart = new Chart(ctx);
+	
+	var data = {
+	labels : [personen],
+	datasets : [
+		{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			data : [schulden]
+		}
+	]
+}
 
-	  google.load("visualization", "1", {packages:["corechart"]});
+	alert('personen: '+personen+'    '+'schulden: '+schulden);
+	new Chart(ctx).Bar(data);
+	
+	
+	/* google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
-      function drawChart() {
+       function drawChart() {
 		  
 		  
 		  
 		  var data = google.visualization.arrayToDataTable([
 			['Speler', 'Aantal ideas killed', { role: 'style' }],	
       	]);
+		
 		for ( var i = 0; i < 15; i++ ) {
 			if (window.localStorage.getItem('deelnemer'+i)){
 				data.push(window.localStorage.getItem('deelnemer'+i), window.localStorage.getItem('deelnemer'+i+"schuld"), '#00CCFF');
 			}
 		}
-			
+		
          var data = google.visualization.arrayToDataTable([
 			['', '', { role: 'style' }],
 			['Ps', 12, '#00CCFF' ], 
@@ -151,7 +188,7 @@
 
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         chart.draw(data, options);
-      }
+      }*/
   </script>
 
 <?php
