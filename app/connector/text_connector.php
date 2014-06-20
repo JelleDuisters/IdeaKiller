@@ -92,14 +92,14 @@
 ?>
 
 <h1>Statistieken</h1>
-<div class="tekst"><canvas id="myChart" width="400" height="400"></canvas></div>
+<div class="tekst"><canvas id="myChart" width="100" height="200"></canvas></div>
 
 <script>
 
 	for ( var i = 0; i < 15; i++ ) {
 		if (window.localStorage.getItem('deelnemer'+i)){
 			$( ".tekst" ).append("<h3>Aantal ideas killed: " +  window.localStorage.getItem('deelnemer'+i) + "</h3>");
-			$( ".tekst" ).append("<p>Aantal ideas killed: " + window.localStorage.getItem('deelnemer'+i+"schuld") + "</p>");
+			$( ".tekst" ).append("<p>" + window.localStorage.getItem('deelnemer'+i+"schuld") + "</p>");
 		}
 	}
 	var labelspersonen = [];
@@ -115,6 +115,8 @@
 			
 		}
 	}
+	
+	alert('personen: '+labelspersonen+'    '+'schulden: '+dataschulden); 
 	
 	var ctx = $("#myChart").get(0).getContext("2d");
 	//This will get the first returned node in the jQuery collection.
@@ -132,7 +134,7 @@
 	]
 }
 
-	//alert('personen: '+labelspersonen+'    '+'schulden: '+dataschulden);
+	
 	new Chart(ctx).Bar(data);
 	
 	
