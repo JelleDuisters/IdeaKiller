@@ -92,7 +92,7 @@
 ?>
 
 <h1>Statistieken</h1>
-<div class="tekst"><canvas id="myChart" width="100" height="200"></canvas></div>
+<div class="tekst"><canvas id="myChart" width="400" height="400"></canvas></div>
 
 <script>
 
@@ -124,6 +124,7 @@
 	labels : labelspersonen,
 	datasets : [
 		{
+			
 			fillColor : "#6EBB1F",
 			integers: false,
 			data : dataschulden

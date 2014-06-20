@@ -276,7 +276,6 @@ window.Chart = function(context){
 			onAnimationComplete : null
 		};		
 
-
 		var config = (options)? mergeChartConfig(chart.Doughnut.defaults,options) : chart.Doughnut.defaults;
 		
 		return new Doughnut(data,config,context);			
