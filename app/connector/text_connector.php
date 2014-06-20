@@ -96,112 +96,47 @@
 
 <script>
 
-	for ( var i = 0; i < 15; i++ ) {
-		if (window.localStorage.getItem('deelnemer'+i)){
-			$( ".tekst" ).append("<h3>" +  window.localStorage.getItem('deelnemer'+i) + "</h3>");
-			$( ".tekst" ).append("<p>Aantal ideas killed: " + window.localStorage.getItem('deelnemer'+i+"schuld") + "</p>");
-		}
-	}
 	var labelspersonen = [];
 	var dataschulden = [];
+	
 	for ( var k = 0; k < 15; k++ ) {
 		if (window.localStorage.getItem('deelnemer'+k)){
 			
-			labelspersonen.push(window.localStorage.getItem('deelnemer'+k));
-			//personen = personen + window.localStorage.getItem('deelnemer'+k)+',';
+			$( ".tekst" ).append("<h3>" +  window.localStorage.getItem('deelnemer'+k) + "</h3>");
+			$( ".tekst" ).append("<p>Aantal ideas killed: " + window.localStorage.getItem('deelnemer'+k+"schuld") + "</p>");
 			
+			labelspersonen.push(window.localStorage.getItem('deelnemer'+k));
 			dataschulden.push(window.localStorage.getItem('deelnemer'+k+"schuld"));
-			//var huidigeschuld =  window.localStorage.getItem('deelnemer'+k+"schuld");
 			
 		}
 	}
 	
-	//alert('personen: '+labelspersonen+'    '+'schulden: '+dataschulden); 
-	
 	var ctx = $("#myChart").get(0).getContext("2d");
-	//This will get the first returned node in the jQuery collection.
+
 	var myNewChart = new Chart(ctx);
 	
 	var max_of_array = Math.max.apply(Math, dataschulden);
 	
 	var opt = {
 		scaleOverride : true,
-		//** Required if scaleOverride is true **
-		//Number - The number of steps in a hard coded scale
 		scaleSteps : max_of_array,
-		//Number - The value jump in the hard coded scale
 		scaleStepWidth : 1,
-		//Number - The scale starting value
 		scaleStartValue : 0,
 	}
 	
-	
 	var data = {
-	labels : labelspersonen,
-	datasets : [
-		{
-			fillColor : "#6EBB1F",
-			integers: false,
-			data : dataschulden
-		}
-	]
-}
-
+		labels : labelspersonen,
+		datasets : [
+			{
+				fillColor : "#6EBB1F",
+				integers: false,
+				data : dataschulden
+			}
+		]
+	}
 	
 	new Chart(ctx).Bar(data, opt);
 	
-	
-	/* google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-       function drawChart() {
-		  
-		  
-		  
-		  var data = google.visualization.arrayToDataTable([
-			['Speler', 'Aantal ideas killed', { role: 'style' }],	
-      	]);
-		
-		for ( var i = 0; i < 15; i++ ) {
-			if (window.localStorage.getItem('deelnemer'+i)){
-				data.push(window.localStorage.getItem('deelnemer'+i), window.localStorage.getItem('deelnemer'+i+"schuld"), '#00CCFF');
-			}
-		}
-		
-         var data = google.visualization.arrayToDataTable([
-			['', '', { role: 'style' }],
-			['Ps', 12, '#00CCFF' ], 
-			['Id', 10, '#00CCFF'],
-			['Ai', 6, '#00CCFF'],
-	
-			
-			[' ', 0, ' '],
-			
-			['HTML5', 12, '#00CCFF'],    
-			['CSS3', 12, '#00CCFF'],            		
-			['JS', 10, '#00CCFF'],
-			['PHP', 4, '#00CCFF'],
-			
-			[' ', 0, ' '],
-			
-			['Web', 8, '#00CCFF'],    
-			['Huisstijl', 6, '#00CCFF']           		
-      	]);
-
-        var options = {
-			backgroundColor: "transparent",
-			baselineColor: 'transparent',
-         	gridlineColor: 'transparent',
-         	textPosition: 'none',
-			legend: {position: 'none'},
-			vAxis:{textPosition: 'none'},
-			enableInteractivity: false,
-			bar: {groupWidth: 30},
-			chartArea: {'width': '100%', 'left': '0'}
-        };
-
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }*/
   </script>
 
 <?php
