@@ -63,6 +63,10 @@ var app = {
 			loadText('card'); 
 		});
 		
+		$("#extraspeler").bind('touchstart click', function(e) {
+			voegspelertoe();
+		});
+		
 		// Set button actions
 		$("#btn-stats").bind('touchstart click', function(e) {
 			loadText('stats');

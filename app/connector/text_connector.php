@@ -116,17 +116,30 @@
 		}
 	}
 	
-	alert('personen: '+labelspersonen+'    '+'schulden: '+dataschulden); 
+	//alert('personen: '+labelspersonen+'    '+'schulden: '+dataschulden); 
 	
 	var ctx = $("#myChart").get(0).getContext("2d");
 	//This will get the first returned node in the jQuery collection.
 	var myNewChart = new Chart(ctx);
 	
+	var max_of_array = Math.max.apply(Math, dataschulden);
+	
+	var opt = {
+		scaleOverride : true,
+		//** Required if scaleOverride is true **
+		//Number - The number of steps in a hard coded scale
+		scaleSteps : max_of_array,
+		//Number - The value jump in the hard coded scale
+		scaleStepWidth : 1,
+		//Number - The scale starting value
+		scaleStartValue : 0,
+	}
+	
+	
 	var data = {
 	labels : labelspersonen,
 	datasets : [
 		{
-			
 			fillColor : "#6EBB1F",
 			integers: false,
 			data : dataschulden
@@ -135,7 +148,7 @@
 }
 
 	
-	new Chart(ctx).Bar(data);
+	new Chart(ctx).Bar(data, opt);
 	
 	
 	/* google.load("visualization", "1", {packages:["corechart"]});
