@@ -59,26 +59,26 @@ var app = {
 		$('#startpage').hide();
 		
 		// Set button actions
-		$("#btn-card").bind('touchstart', function(e) {
+		$("#btn-card").bind('touchstart click', function(e) {
 			loadText('card'); 
 		});
 		
 		// Set button actions
-		$("#btn-stats").bind('touchstart', function(e) {
+		$("#btn-stats").bind('touchstart click', function(e) {
 			loadText('stats');
 		});
 		
 		// Set button actions
-		$("#btn-rules").bind('touchstart', function(e) {
+		$("#btn-rules").bind('touchstart click', function(e) {
 			loadText('rules');
 		});
 		
-		$("#btn-info").bind('touchstart', function(e) {
+		$("#btn-info").bind('touchstart click', function(e) {
 			loadText('info');
 		});
 
 		
-		$("#header .btnBack").bind('touchstart', function(e) {
+		$("#header .btnBack").bind('touchstart click', function(e) {
 			goBack();
 		});
 

@@ -103,19 +103,23 @@
 		}
 	}
 	var personen;
+	var labelspersonen = [];
+	var dataschulden = [];
 	var schulden;
 	for ( var k = 0; k < 15; k++ ) {
 		if (window.localStorage.getItem('deelnemer'+k)){
 			
-			personen = personen + window.localStorage.getItem('deelnemer'+k)+',';
+			labelspersonen.push(window.localStorage.getItem('deelnemer'+k));
+			//personen = personen + window.localStorage.getItem('deelnemer'+k)+',';
 			
-			var huidigeschuld =  window.localStorage.getItem('deelnemer'+k+"schuld");
+			dataschulden.push(window.localStorage.getItem('deelnemer'+k+"schuld"));
+			//var huidigeschuld =  window.localStorage.getItem('deelnemer'+k+"schuld");
 			
-			if(huidigeschuld == null){
+			/*if(huidigeschuld == null){
 				huidigeschuld = 0;
 			}
 			
-			schulden = schulden + huidigeschuld+',';
+			schulden = schulden + huidigeschuld+',';*/
 		}
 	}
 	
@@ -124,17 +128,17 @@
 	var myNewChart = new Chart(ctx);
 	
 	var data = {
-	labels : [personen],
+	labels : labelspersonen,
 	datasets : [
 		{
 			fillColor : "rgba(220,220,220,0.5)",
 			strokeColor : "rgba(220,220,220,1)",
-			data : [schulden]
+			data : dataschulden
 		}
 	]
 }
 
-	alert('personen: '+personen+'    '+'schulden: '+schulden);
+	alert('personen: '+labelspersonen+'    '+'schulden: '+dataschulden);
 	new Chart(ctx).Bar(data);
 	
 	
