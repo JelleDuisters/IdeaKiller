@@ -64,9 +64,9 @@ var app = {
 		});
 		
 		// Set button actions
-		//$("#btn-stats").bind('touchstart', function(e) {
+		$("#btn-stats").bind('touchstart', function(e) {
 			loadText('stats');
-		//});
+		});
 		
 		// Set button actions
 		$("#btn-rules").bind('touchstart', function(e) {
