@@ -98,8 +98,8 @@
 
 	for ( var i = 0; i < 15; i++ ) {
 		if (window.localStorage.getItem('deelnemer'+i)){
-			$( ".tekst" ).append("<h3>Aantal ideas killed: " +  window.localStorage.getItem('deelnemer'+i) + "</h3>");
-			$( ".tekst" ).append("<p>" + window.localStorage.getItem('deelnemer'+i+"schuld") + "</p>");
+			$( ".tekst" ).append("<h3>" +  window.localStorage.getItem('deelnemer'+i) + "</h3>");
+			$( ".tekst" ).append("<p>Aantal ideas killed: " + window.localStorage.getItem('deelnemer'+i+"schuld") + "</p>");
 		}
 	}
 	var labelspersonen = [];
