@@ -102,11 +102,17 @@
 	for ( var k = 0; k < 15; k++ ) {
 		if (window.localStorage.getItem('deelnemer'+k)){
 			
+			var schuld = window.localStorage.getItem('deelnemer'+k+"schuld");
+			
+			if (schuld == null){
+				schuld = 0;
+			}
+			
 			$( ".tekst" ).append("<h3>" +  window.localStorage.getItem('deelnemer'+k) + "</h3>");
-			$( ".tekst" ).append("<p>Aantal ideas killed: " + window.localStorage.getItem('deelnemer'+k+"schuld") + "</p>");
+			$( ".tekst" ).append("<p>Aantal ideas killed: " + schuld + "</p>");
 			
 			labelspersonen.push(window.localStorage.getItem('deelnemer'+k));
-			dataschulden.push(window.localStorage.getItem('deelnemer'+k+"schuld"));
+			dataschulden.push(schuld);
 			
 		}
 	}
