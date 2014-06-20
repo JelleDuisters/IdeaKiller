@@ -102,10 +102,8 @@
 			$( ".tekst" ).append("<p>Aantal ideas killed: " + window.localStorage.getItem('deelnemer'+i+"schuld") + "</p>");
 		}
 	}
-	var personen;
 	var labelspersonen = [];
 	var dataschulden = [];
-	var schulden;
 	for ( var k = 0; k < 15; k++ ) {
 		if (window.localStorage.getItem('deelnemer'+k)){
 			
@@ -115,11 +113,6 @@
 			dataschulden.push(window.localStorage.getItem('deelnemer'+k+"schuld"));
 			//var huidigeschuld =  window.localStorage.getItem('deelnemer'+k+"schuld");
 			
-			/*if(huidigeschuld == null){
-				huidigeschuld = 0;
-			}
-			
-			schulden = schulden + huidigeschuld+',';*/
 		}
 	}
 	
@@ -131,14 +124,14 @@
 	labels : labelspersonen,
 	datasets : [
 		{
-			fillColor : "rgba(220,220,220,0.5)",
-			strokeColor : "rgba(220,220,220,1)",
+			fillColor : "#6EBB1F",
+			integers: false,
 			data : dataschulden
 		}
 	]
 }
 
-	alert('personen: '+labelspersonen+'    '+'schulden: '+dataschulden);
+	//alert('personen: '+labelspersonen+'    '+'schulden: '+dataschulden);
 	new Chart(ctx).Bar(data);
 	
 	
